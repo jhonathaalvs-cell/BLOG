@@ -1,3 +1,14 @@
+    <url>
+        <loc>https://www.gglevelnews.com.br/artigos/lancamentos/windrose.html</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.gglevelnews.com.br/images/lancamentos/windrose/capa.jpg</image:loc>
+            <image:title>Windrose - Survival de piratas em mundo aberto</image:title>
+            <image:caption>Arte promocional de Windrose, navio pirata em mar aberto</image:caption>
+        </image:image>
+    </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ╔══════════════════════════════════════════════════════════════════╗
