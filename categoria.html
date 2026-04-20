@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║  🎮 GG Level News - Página de Categoria                        ║
+║  📚 MODO AULA: Página que lista artigos de uma categoria        ║
+║                                                                  ║
+║  DICAS SEO PARA PÁGINAS DE CATEGORIA:                           ║
+║  ✅ Cada categoria deve ter título e descrição únicos           ║
+║  ✅ URL amigável: /categoria/noticias (não /cat?id=1)           ║
+║  ✅ Paginação com rel="next" e rel="prev"                       ║
+║  ✅ Conteúdo introdutório único (não só lista de links)         ║
+║  ✅ Breadcrumb estruturado                                      ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias de Games - Últimas Novidades do Mundo Gamer | GG Level News</title>
+    <meta name="description" content="Todas as notícias de games em um só lugar. PlayStation, Xbox, Nintendo, PC e Mobile. Fique por dentro das últimas novidades do mundo gamer.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.gglevelnews.com.br/categoria/noticias">
+    
+    <!-- Paginação SEO -->
+    <link rel="next" href="https://www.gglevelnews.com.br/categoria/noticias?page=2">
+    <!--
+      ✅ AULA: Paginação SEO
+      → rel="next" e rel="prev" informam ao Google a sequência
+      → Página 1: só tem rel="next"
+      → Página 2: tem rel="prev" (pag 1) e rel="next" (pag 3)
+      → Última página: só tem rel="prev"
+      → Ajuda o Google a entender que são páginas relacionadas
+    -->
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Notícias de Games | GG Level News">
+    <meta property="og:description" content="Todas as notícias de games em um só lugar.">
+    <meta property="og:image" content="https://www.gglevelnews.com.br/images/site/og-banner.png">
+    <meta property="og:url" content="https://www.gglevelnews.com.br/categoria/noticias">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notícias de Games | GG Level News">
+    <meta name="twitter:description" content="Todas as notícias de games em um só lugar.">
+    <meta name="twitter:image" content="https://www.gglevelnews.com.br/images/site/og-banner.png">
+
+    <!-- FAVICONS -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/site/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/site/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6C3CE1">
+
+    <!-- FONTES E CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- SCHEMA - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.gglevelnews.com.br/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Notícias",
+                "item": "https://www.gglevelnews.com.br/categoria/noticias"
+            }
+        ]
+    }
+    </script>
+
+    <!-- SCHEMA - CollectionPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Notícias de Games",
+        "description": "Todas as notícias de games em um só lugar.",
+        "url": "https://www.gglevelnews.com.br/categoria/noticias",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "GG Level News",
+            "url": "https://www.gglevelnews.com.br/"
+        }
+    }
+    </script>
+    <!--
+      ✅ AULA: Schema CollectionPage
+      → Informa ao Google que é uma página de coleção/listagem
+      → Diferente de "Article" ou "WebPage"
+      → Ajuda o Google a entender a estrutura do site
+    -->
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="site-header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo" aria-label="GG Level News - Página Inicial">
+                    <span class="logo-text">GG <span class="logo-highlight">Level</span> News</span>
+                </a>
+                <nav class="main-nav" aria-label="Navegação principal">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="categoria.html?cat=noticias" class="nav-link">Notícias</a></li>
+                        <li><a href="categoria.html?cat=reviews" class="nav-link">Reviews</a></li>
+                        <li><a href="categoria.html?cat=lancamentos" class="nav-link">Lançamentos</a></li>
+                        <li><a href="categoria.html?cat=esports" class="nav-link">Esports</a></li>
+                        <li><a href="categoria.html?cat=dicas" class="nav-link">Dicas & Guias</a></li>
+                        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="theme-toggle" aria-label="Alternar tema" id="themeToggle">
+                        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+                        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    </button>
+                    <button class="menu-toggle" aria-label="Abrir menu" id="menuToggle"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <!-- HEADER DA CATEGORIA -->
+        <div class="category-header">
+            <div class="container">
+                <h1>📰 Notícias de Games</h1>
+                <p>Fique por dentro de tudo que acontece no mundo dos games. Atualizações diárias sobre todas as plataformas.</p>
+            </div>
+        </div>
+
+        <!-- BREADCRUMB -->
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">›</span>
+                <span>Notícias</span>
+            </nav>
+        </div>
+
+        <!-- GRID DE ARTIGOS -->
+        <section class="category-content" aria-label="Lista de notícias">
+            <div class="container">
+                <!-- 
+                  ╔══════════════════════════════════════════════════════════════╗
+                  ║  📝 COMO USAR: GRID DE ARTIGOS DA CATEGORIA                ║
+                  ║                                                             ║
+                  ║  Esta seção lista os artigos de UMA categoria.             ║
+                  ║  Cada <article> é um card de artigo.                       ║
+                  ║                                                             ║
+                  ║  DIFERENÇA DA HOME: Aqui os títulos usam <h2>              ║
+                  ║  (na home usam h3 porque o h2 é o título da seção).        ║
+                  ║                                                             ║
+                  ║  COPIE o bloco <article> para cada artigo publicado.       ║
+                  ║  Recomendado: 6-12 cards por página (2-4 linhas de 3).     ║
+                  ║  Para mais artigos, use a paginação (links de próxima).    ║
+                  ╚══════════════════════════════════════════════════════════════╝
+                -->
+                <div class="news-grid">
+
+                    <!-- ══════ CARD DE ARTIGO (COPIE PARA CRIAR MAIS) ══════ -->
+                    <article class="news-card">
+                        <a href="artigos/noticias/pragmata.html" class="card-link">
+                            <div class="card-image">
+                                <img src="images/noticias/pragmata/capa1.webp" 
+                                     alt="Pragmata - Novo jogo de ficção científica da Capcom" 
+                                     width="400" height="225" loading="lazy">
+                                <span class="badge badge-destaque">🔥 Destaque</span>
+                            </div>
+                            <div class="card-content">
+                                <div class="article-meta">
+                                    <span class="category-tag category-noticias">Notícias</span>
+                                    <time datetime="2026-04-20">20 Abr 2026</time>
+                                </div>
+                                <h2 class="card-title">Pragmata: Análise Completa do Novo Jogo de Ficção Científica da Capcom</h2>
+                                <p class="card-excerpt">O novo título da Capcom mistura ação, hacking e ficção científica em uma aventura na Lua. Confira o que achamos.</p>
+                                <div class="card-footer">
+                                    <span class="author">Redação GG Level</span>
+                                    <span class="read-time">6 min</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- ══════ FIM DO CARD ══════ -->
+
+                    <!-- 
+                      📋 PARA ADICIONAR MAIS ARTIGOS:
+                      → Copie TUDO entre "CARD DE ARTIGO" e "FIM DO CARD"
+                      → Cole aqui embaixo
+                      → Troque todos os [TROCAR]
+                      → Repita para cada artigo publicado (recomendado: 6 por página)
+                      → O mais recente deve ficar primeiro (em cima)
+                    -->
+
+                </div>
+
+                <!-- PAGINAÇÃO -->
+                <nav class="pagination" aria-label="Paginação">
+                    <!-- 
+                      ✅ AULA: Paginação
+                      → Quando tiver mais artigos do que cabem em 1 página
+                      → A página ATUAL é <span> (não link), as outras são <a>
+                      → Combine com rel="next" e rel="prev" no <head>
+                      
+                      EXEMPLO com 3 páginas (estando na página 1):
+                      <span class="active">1</span>
+                      <a href="?page=2">2</a>
+                      <a href="?page=3">3</a>
+                      <a href="?page=2">→</a>
+                      
+                      EXEMPLO estando na página 2:
+                      <a href="?page=1">←</a>
+                      <a href="?page=1">1</a>
+                      <span class="active">2</span>
+                      <a href="?page=3">3</a>
+                      <a href="?page=3">→</a>
+                    -->
+                    <span class="active">1</span>
+                    <!-- Adicione mais links quando tiver mais páginas -->
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-title"> GG Level News</h3>
+                    <p>Seu portal completo de notícias de games.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <nav aria-label="Links do rodapé"><ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categoria.html?cat=noticias">Notícias</a></li>
+                        <li><a href="categoria.html?cat=reviews">Reviews</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul></nav>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Plataformas</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">PlayStation</a></li>
+                        <li><a href="#">Xbox</a></li>
+                        <li><a href="#">Nintendo</a></li>
+                        <li><a href="#">PC</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacidade.html">Privacidade</a></li>
+                        <li><a href="termos.html">Termos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2026 GG Level News.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cookie-banner" id="cookieBanner" role="dialog">
+        <div class="cookie-content">
+            <p> Usamos cookies. <a href="cookies.html">Saiba mais</a>.</p>
+            <div class="cookie-actions">
+                <button class="btn-cookie-accept" id="cookieAccept">Aceitar</button>
+                <button class="btn-cookie-reject" id="cookieReject">Rejeitar</button>
+            </div>
+        </div>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "name": "GG Level News",
+    "short_name": "GG Level",
+    "description": "Portal de notícias, reviews e novidades sobre games",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0F172A",
+    "theme_color": "#6C3CE1",
+    "orientation": "any",
+    "lang": "pt-BR",
+    "categories": ["games", "news", "entertainment"],
+    "icons": [
+        {
+            "src": "images/site/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "images/site/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

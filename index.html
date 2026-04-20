@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║  🎮 GG Level News - Blog de Notícias de Games                 ║
+║  📚 MODO AULA: Cada seção está comentada explicando o porquê   ║
+║                                                                  ║
+║  ESTRUTURA SEO COMPLETA:                                        ║
+║  1. Meta tags para Google (título, descrição, keywords)         ║
+║  2. Open Graph para redes sociais (Facebook, WhatsApp)          ║
+║  3. Twitter Cards para compartilhamento no Twitter/X            ║
+║  4. Schema.org (JSON-LD) para Rich Snippets no Google           ║
+║  5. Sitemap.xml para indexação rápida                           ║
+║  6. Robots.txt para controlar crawlers                          ║
+║  7. HTML semântico (header, nav, main, article, footer)         ║
+║  8. Heading hierarchy (h1 > h2 > h3) organizada                ║
+║  9. Links internos para distribuir autoridade                   ║
+║  10. Imagens otimizadas com alt text descritivo                 ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="pt-BR">
+<!-- 
+  ✅ AULA: lang="pt-BR" 
+  → Diz ao Google que o conteúdo é em Português do Brasil
+  → Ajuda na indexação correta por região/idioma
+  → O Google usa isso para mostrar seu site para brasileiros
+-->
+
+<head>
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 1: META TAGS BÁSICAS (Obrigatórias)
+         → São as informações fundamentais que todo site precisa
+    ═══════════════════════════════════════════════════════════ -->
+    
+    <meta charset="UTF-8">
+    <!-- 
+      ✅ AULA: charset="UTF-8"
+      → Define a codificação de caracteres (acentos, ç, etc.)
+      → Sem isso, palavras como "notícias" podem aparecer quebradas
+      → SEMPRE deve ser a primeira meta tag no <head>
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 
+      ✅ AULA: viewport
+      → Torna o site responsivo (adapta a celulares e tablets)
+      → O Google prioriza sites mobile-friendly desde 2018
+      → Sem essa tag, seu site aparece "zoomed out" no celular
+      → IMPACTO SEO: Sites não responsivos perdem posição no Google
+    -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Compatibilidade com navegadores antigos -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 2: SEO - TÍTULO E DESCRIÇÃO (Mais importantes!)
+         → São exatamente o que aparece nos resultados do Google
+         → O título aparece como link azul clicável
+         → A descrição aparece como texto cinza abaixo do título
+    ═══════════════════════════════════════════════════════════ -->
+
+    <title>GG Level News | Notícias, Reviews e Novidades de Games 2026</title>
+    <!-- 
+      ✅ AULA: <title> - A TAG MAIS IMPORTANTE DO SEO
+      → Máximo recomendado: 60 caracteres (Google corta o resto)
+      → Coloque a palavra-chave principal no INÍCIO
+      → Use | ou - para separar marca do conteúdo
+      → Inclua o ano para mostrar que é conteúdo atualizado
+      → FÓRMULA: [Palavra-chave] | [Marca] - [Complemento]
+      
+      EXEMPLO DO QUE APARECE NO GOOGLE:
+      ┌─────────────────────────────────────────────────┐
+      │ GG Level News | Notícias, Reviews e Novidades  │ ← título
+      │ de Games 2026                                   │
+      │ www.gglevelnews.com.br                        │ ← URL
+      │ Seu portal completo de notícias de games...     │ ← descrição
+      └─────────────────────────────────────────────────┘
+    -->
+
+    <meta name="description" content="Seu portal completo de notícias de games. Reviews, lançamentos, dicas, trailers e tudo sobre PlayStation, Xbox, Nintendo, PC Gaming e muito mais. Atualizado diariamente.">
+    <!-- 
+      ✅ AULA: meta description
+      → Máximo recomendado: 155-160 caracteres
+      → NÃO afeta ranking diretamente, MAS afeta o CTR (taxa de clique)
+      → Quanto mais pessoas clicam, melhor seu ranking fica
+      → Use palavras-chave naturalmente na descrição
+      → Inclua um "call to action" sutil (ex: "Confira agora")
+      → Cada página DEVE ter uma descrição ÚNICA (nunca repetir)
+    -->
+
+    <meta name="keywords" content="notícias de games, novidades jogos, reviews games, lançamentos games 2026, PlayStation 6, Xbox, Nintendo Switch 2, PC gaming, esports, trailers de jogos">
+    <!-- 
+      ✅ AULA: meta keywords
+      → O Google oficialmente NÃO usa mais keywords para ranking
+      → MAS outros buscadores (Bing, Yahoo) ainda consideram
+      → Não exagere: 5-10 palavras-chave relevantes
+      → Serve como referência para você mesmo organizar o conteúdo
+    -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 3: SEO TÉCNICO - Tags que ajudam o Google
+    ═══════════════════════════════════════════════════════════ -->
+
+    <meta name="robots" content="index, follow">
+    <!-- 
+      ✅ AULA: robots
+      → "index" = Google, pode indexar (salvar) esta página
+      → "follow" = Google, siga os links desta página
+      → Outras opções: "noindex" (não indexar), "nofollow" (não seguir links)
+      → Use "noindex" para páginas admin, login, obrigado, etc.
+    -->
+
+    <meta name="author" content="GG Level News">
+    <meta name="publisher" content="GG Level News">
+    
+    <link rel="canonical" href="https://www.gglevelnews.com.br/">
+    <!-- 
+      ✅ AULA: canonical
+      → MUITO IMPORTANTE! Evita conteúdo duplicado
+      → Diz ao Google: "esta é a URL oficial desta página"
+      → Se seu site é acessível por www e sem www, o Google pode
+        pensar que são 2 páginas diferentes (conteúdo duplicado)
+      → O canonical resolve isso apontando para a URL principal
+      → SEMPRE use em todas as páginas
+    -->
+
+    <link rel="alternate" hreflang="pt-BR" href="https://www.gglevelnews.com.br/">
+    <!-- 
+      ✅ AULA: hreflang
+      → Indica o idioma e região do conteúdo
+      → Útil se no futuro tiver versão em outros idiomas
+      → Ajuda o Google a mostrar a versão correta por país
+    -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 4: OPEN GRAPH - Compartilhamento em Redes Sociais
+         → Quando alguém compartilha seu link no Facebook/WhatsApp,
+           essas tags controlam como o preview aparece
+    ═══════════════════════════════════════════════════════════ -->
+
+    <meta property="og:title" content="GG Level News | Notícias e Novidades de Games">
+    <meta property="og:description" content="Seu portal completo de notícias de games. Reviews, lançamentos, dicas e tudo sobre o mundo gamer.">
+    <meta property="og:image" content="https://www.gglevelnews.com.br/images/site/og-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.gglevelnews.com.br/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="GG Level News">
+    <!-- 
+      ✅ AULA: Open Graph (og:)
+      → og:title = Título que aparece no card de compartilhamento
+      → og:description = Descrição no card
+      → og:image = Imagem do card (tamanho ideal: 1200x630px)
+      → og:url = URL oficial da página
+      → og:type = Tipo ("website" para home, "article" para artigos)
+      → og:locale = Idioma/região
+      
+      COMO TESTAR: Use https://developers.facebook.com/tools/debug/
+      Cole sua URL e veja como o card aparece
+    -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 5: TWITTER CARDS - Preview no Twitter/X
+    ═══════════════════════════════════════════════════════════ -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GG Level News | Notícias de Games">
+    <meta name="twitter:description" content="Seu portal completo de notícias de games. Reviews, lançamentos e novidades.">
+    <meta name="twitter:image" content="https://www.gglevelnews.com.br/images/site/og-banner.png">
+    <meta name="twitter:site" content="@gglevelnews">
+    <!-- 
+      ✅ AULA: Twitter Cards
+      → "summary_large_image" = Card grande com imagem (melhor CTR)
+      → "summary" = Card pequeno com thumbnail
+      → COMO TESTAR: https://cards-dev.twitter.com/validator
+    -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 6: FAVICONS E ÍCONES
+         → O ícone que aparece na aba do navegador e nos favoritos
+    ═══════════════════════════════════════════════════════════ -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="images/site/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/site/apple-touch-icon.png">
+    <!-- 
+      ✅ AULA: Favicons
+      → Crie ícones em vários tamanhos usando: https://favicon.io/
+      → apple-touch-icon = ícone quando salvam no iPhone
+      → Um site sem favicon parece amador e perde credibilidade
+    -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 7: PWA - Progressive Web App (Opcional mas recomendado)
+    ═══════════════════════════════════════════════════════════ -->
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#6C3CE1">
+    <!-- 
+      ✅ AULA: PWA
+      → manifest.json permite instalar o site como app
+      → theme-color muda a cor da barra do navegador no celular
+      → Melhora a experiência do usuário e pode ajudar no SEO
+    -->
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 8: CSS E FONTES
+         → Carregamento otimizado de fontes para performance
+    ═══════════════════════════════════════════════════════════ -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 
+      ✅ AULA: preconnect
+      → Avisa o navegador para conectar antecipadamente ao servidor de fontes
+      → Reduz o tempo de carregamento das fontes
+      → PERFORMANCE = melhor SEO (Google mede velocidade)
+    -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- 
+      ✅ AULA: display=swap
+      → Mostra texto com fonte padrão enquanto a fonte carrega
+      → Evita "flash of invisible text" (FOIT)
+      → Melhora Core Web Vitals (métricas de performance do Google)
+    -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 9: SCHEMA.ORG - DADOS ESTRUTURADOS (JSON-LD)
+         → Permite Rich Snippets nos resultados do Google
+         → Aquele card especial com estrelas, breadcrumbs, etc.
+         → É o que diferencia um resultado NORMAL de um DESTAQUE
+    ═══════════════════════════════════════════════════════════ -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "GG Level News",
+        "alternateName": "GVN",
+        "url": "https://www.gglevelnews.com.br/",
+        "description": "Portal de notícias, reviews e novidades sobre games",
+        "publisher": {
+            "@type": "Organization",
+            "name": "GG Level News",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.gglevelnews.com.br/images/site/logo.jpg",
+                "width": 300,
+                "height": 200
+            }
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.gglevelnews.com.br/busca?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    <!-- 
+      ✅ AULA: Schema.org JSON-LD
+      → JSON-LD é o formato RECOMENDADO pelo Google
+      → @type: "WebSite" = diz ao Google que é um site
+      → "potentialAction: SearchAction" = habilita a barra de busca
+        diretamente nos resultados do Google (Sitelinks Search Box)
+      → COMO TESTAR: https://search.google.com/test/rich-results
+      
+      RESULTADO NO GOOGLE:
+      ┌─────────────────────────────────────────────────┐
+      │ GG Level News                                  │
+      │ www.gglevelnews.com.br                        │
+      │ [🔍 Buscar no GG Level News          ] [Buscar]│ ← Search Box!
+      │ Notícias · Reviews · Lançamentos · Sobre       │ ← Sitelinks!
+      └─────────────────────────────────────────────────┘
+    -->
+
+    <!-- Schema.org - Breadcrumb (Navegação estrutural) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.gglevelnews.com.br/"
+            }
+        ]
+    }
+    </script>
+    <!-- 
+      ✅ AULA: BreadcrumbList
+      → Mostra a trilha de navegação no Google:
+        Home > Categoria > Artigo
+      → Ajuda o usuário a entender onde está no site
+      → Google exibe isso nos resultados de busca
+    -->
+</head>
+
+<body>
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 10: HEADER - Cabeçalho do Site
+         → Use <header> semântico (não <div>)
+         → O Google entende que isso é o cabeçalho
+    ═══════════════════════════════════════════════════════════ -->
+
+    <header class="site-header" id="header">
+        <div class="container">
+            <div class="header-content">
+                
+                <!-- LOGO -->
+                <a href="index.html" class="logo" aria-label="GG Level News - Página Inicial">
+                    <!-- 
+                      ✅ AULA: aria-label
+                      → Texto para leitores de tela (acessibilidade)
+                      → Google considera acessibilidade no ranking
+                    -->
+                    
+                    <span class="logo-text">GG <span class="logo-highlight">Level</span> News</span>
+                </a>
+
+                <!-- ═══════════════════════════════════════════════
+                     NAVEGAÇÃO PRINCIPAL
+                     → Use <nav> semântico com aria-label
+                     → Links internos ajudam o Google a descobrir páginas
+                ═══════════════════════════════════════════════ -->
+                <nav class="main-nav" aria-label="Navegação principal">
+                    <!-- 
+                      ✅ AULA: Tag <nav>
+                      → Indica ao Google que é uma área de navegação
+                      → aria-label diferencia se houver múltiplas navs
+                    -->
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="categoria.html?cat=noticias" class="nav-link">Notícias</a></li>
+                        <li><a href="categoria.html?cat=reviews" class="nav-link">Reviews</a></li>
+                        <li><a href="categoria.html?cat=lancamentos" class="nav-link">Lançamentos</a></li>
+                        <li><a href="categoria.html?cat=esports" class="nav-link">Esports</a></li>
+                        <li><a href="categoria.html?cat=dicas" class="nav-link">Dicas & Guias</a></li>
+                        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                    </ul>
+                </nav>
+
+                <!-- BOTÕES DO HEADER -->
+                <div class="header-actions">
+                    <button class="theme-toggle" aria-label="Alternar tema claro/escuro" id="themeToggle">
+                        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                        </svg>
+                        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <button class="menu-toggle" aria-label="Abrir menu" id="menuToggle">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 11: CONTEÚDO PRINCIPAL
+         → Use <main> para o conteúdo principal da página
+         → Só pode existir UM <main> por página
+         → Google prioriza o conteúdo dentro de <main>
+    ═══════════════════════════════════════════════════════════ -->
+
+    <main class="site-main">
+
+        <!-- ═══════════════════════════════════════════════════════
+             HERO SECTION - Destaque Principal
+             → A notícia mais importante / recente
+             → O conteúdo "above the fold" (visível sem scroll)
+             → Google dá mais peso ao conteúdo que aparece primeiro
+        ═══════════════════════════════════════════════════════ -->
+        <section class="hero-section" aria-label="Notícia em destaque">
+            <div class="container">
+                <!-- 
+                  ╔══════════════════════════════════════════════════════════════╗
+                  ║  📝 COMO USAR ESTA SEÇÃO: HERO (DESTAQUE PRINCIPAL)        ║
+                  ║                                                             ║
+                  ║  Esta é a notícia mais importante que aparece no TOPO.      ║
+                  ║  É o primeiro conteúdo que o visitante vê (above the fold). ║
+                  ║                                                             ║
+                  ║  PASSO A PASSO:                                             ║
+                  ║  1. Troque o src da imagem pela sua imagem real             ║
+                  ║  2. Troque o alt pela descrição real da imagem              ║
+                  ║  3. Troque o href do link pelo caminho do artigo            ║
+                  ║     Ex: artigos/noticias/meu-artigo.html                    ║
+                  ║  4. Troque o título no <h1>                                 ║
+                  ║  5. Troque a data no <time> (formato: YYYY-MM-DD)          ║
+                  ║  6. Troque o resumo no <p class="hero-excerpt">            ║
+                  ║  7. Troque o nome do autor                                 ║
+                  ║                                                             ║
+                  ║  DICA: Atualize esta seção sempre que tiver uma notícia     ║
+                  ║  muito importante ou destaque da semana!                    ║
+                  ╚══════════════════════════════════════════════════════════════╝
+                -->
+                <article class="hero-card">
+                    <!-- 
+                      ✅ AULA: Tag <article>
+                      → Indica conteúdo independente e auto-contido
+                      → Google entende que isso é um artigo/notícia
+                      → Cada notícia deve ser um <article>
+                    -->
+                    <div class="hero-image">
+                        <img src="images/noticias/pragmata/capa1.webp" 
+                             alt="Pragmata - Novo jogo de ficção científica da Capcom com Diana e interface holográfica"
+                             width="1200" height="630" loading="eager">
+                        <!-- 
+                          ✅ AULA: Atributos da imagem
+                          → src: caminho da imagem. Salve em images/site/ ou images/noticias/
+                          → alt: OBRIGATÓRIO! Descreva a imagem com palavras-chave
+                            O Google não "vê" imagens, ele lê o alt text
+                            Pessoas cegas usam leitores de tela que leem o alt
+                            EXEMPLO BOM: "GTA 6 trailer mostrando cidade de Vice City"
+                            EXEMPLO RUIM: "imagem" ou "foto"
+                          → width/height: Evita layout shift (CLS - Core Web Vital)
+                            O navegador reserva o espaço antes de carregar
+                            DICA: use 1200x630 para imagens hero (proporção ideal para redes sociais)
+                          → loading="eager": Carrega imediatamente (acima do fold)
+                            Use loading="lazy" para imagens abaixo do fold
+                        -->
+                        <span class="badge badge-destaque">🔥 Destaque</span>
+                        <!-- 
+                          ✅ AULA: Badge/Etiqueta
+                          → Esse <span> mostra uma etiqueta sobre a imagem
+                          → Você pode trocar o texto: "🔥 Destaque", "⭐ Review", "🚀 Novo", etc.
+                          → A classe badge-destaque define a cor (veja no CSS)
+                        -->
+                    </div>
+                    <div class="hero-content">
+                        <div class="article-meta">
+                            <span class="category-tag category-noticias">Notícias</span>
+                            <!-- 
+                              ✅ AULA: Categoria
+                              → Troque pelo nome da categoria: Notícias, Reviews, Lançamentos, etc.
+                              → Se quiser cor diferente por categoria, use classes:
+                                category-noticias, category-reviews, category-lancamentos, etc.
+                            -->
+                            <time datetime="2026-04-20">20 de Abril, 2026</time>
+                            <!-- 
+                              ✅ AULA: Tag <time> com datetime
+                              → datetime DEVE estar em formato ISO: AAAA-MM-DD
+                                Exemplo: 2025-06-15 = 15 de Junho de 2025
+                              → O texto visível pode ser em qualquer formato bonito
+                                Exemplo: "15 de Junho, 2025"
+                              → Google usa o datetime para mostrar a data nos resultados
+                              → Mostra que o conteúdo é recente/atualizado
+                            -->
+                        </div>
+                        <h1 class="hero-title">
+                            <a href="artigos/noticias/pragmata.html">PRAGMATA é GOTY? Veja o novo jogo da Capcom</a>
+                        </h1>
+                        <!-- 
+                          ✅ AULA: Tag <h1>
+                          → APENAS UM <h1> por página (regra de ouro do SEO)
+                          → Deve conter a palavra-chave principal da página
+                          → É o título mais importante para o Google
+                          → Na home, o h1 é a notícia destaque
+                          → Em artigos, o h1 é o título do artigo
+                          → O href deve apontar para a página do artigo completo
+                            Exemplo: artigos/noticias/gta-6-data-lancamento.html
+                        -->
+                        <p class="hero-excerpt">PRAGMATA chegou! O novo jogo da Capcom mistura ficção científica, ação e mecânicas de hacking em uma aventura na Lua. Confira nossa análise sobre gameplay, história e o que a comunidade está achando do lançamento.</p>
+                        <!-- 
+                          ✅ AULA: Resumo/Excerpt
+                          → 2-3 frases que resumem o artigo
+                          → Deve ser atraente para o leitor clicar
+                          → Inclua palavras-chave de forma natural
+                          → NÃO copie o início do artigo - escreva um resumo único
+                        -->
+                        <div class="hero-footer">
+                            <span class="author">Por <strong>Redação GG Level</strong></span>
+                            <span class="read-time">6 min de leitura</span>
+                            <!-- 
+                              ✅ AULA: Tempo de leitura
+                              → Calcule: número de palavras ÷ 200 = minutos
+                              → Artigo com 1000 palavras = ~5 min de leitura
+                              → Isso ajuda o leitor a decidir se vai ler agora
+                            -->
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SEÇÃO DE ÚLTIMAS NOTÍCIAS
+             → Use <section> com heading para agrupar conteúdo
+             → Cada seção deve ter um <h2> descritivo
+        ═══════════════════════════════════════════════════════ -->
+        <section class="latest-news" aria-label="Últimas notícias">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Últimas Notícias</h2>
+                    <!-- 
+                      ✅ AULA: Hierarquia de Headings
+                      → h1: Título principal (1 por página)
+                      → h2: Seções principais (Últimas Notícias, Reviews, etc.)
+                      → h3: Títulos de artigos dentro das seções
+                      → h4, h5, h6: Subdivisões mais profundas
+                      
+                      NUNCA pule níveis: h1 → h3 (errado!)
+                      CORRETO: h1 → h2 → h3
+                      
+                      O Google usa headings para entender a estrutura do conteúdo
+                    -->
+                    <a href="categoria.html?cat=noticias" class="see-all-link">Ver todas →</a>
+                </div>
+
+                <!-- 
+                  ╔══════════════════════════════════════════════════════════════╗
+                  ║  📝 COMO USAR: GRID DE NOTÍCIAS (CARDS)                    ║
+                  ║                                                             ║
+                  ║  Cada <article class="news-card"> é UM card de notícia.    ║
+                  ║  Para adicionar mais notícias, COPIE o bloco inteiro do    ║
+                  ║  <article> até </article> e cole logo abaixo.              ║
+                  ║                                                             ║
+                  ║  RECOMENDAÇÃO: Mantenha 6 cards nesta seção (2 linhas de 3)║
+                  ║  O CSS já organiza 3 por linha no desktop automaticamente. ║
+                  ║                                                             ║
+                  ║  EM CADA CARD NOVO, TROQUE:                                ║
+                  ║  1. href → link para o artigo completo                     ║
+                  ║  2. src da img → caminho da imagem (400x225 recomendado)   ║
+                  ║  3. alt da img → descrição com palavras-chave              ║
+                  ║  4. badge → etiqueta (PlayStation, Xbox, Nintendo, etc.)   ║
+                  ║  5. category-tag → nome da categoria                       ║
+                  ║  6. datetime → data no formato AAAA-MM-DD                  ║
+                  ║  7. card-title → título do artigo                          ║
+                  ║  8. card-excerpt → resumo curto (1-2 frases)              ║
+                  ║  9. author → nome do autor                                 ║
+                  ║  10. read-time → tempo de leitura                          ║
+                  ╚══════════════════════════════════════════════════════════════╝
+                -->
+                <div class="news-grid">
+
+                    <!-- ══════ CARD DE NOTÍCIA 1 (COPIE ESTE BLOCO PARA CRIAR MAIS) ══════ -->
+                    <article class="news-card">
+                        <a href="artigos/noticias/pragmata.html" class="card-link">
+                            <div class="card-image">
+                                <img src="images/noticias/pragmata/capa1.webp" 
+                                     alt="Pragmata - Gameplay e análise do novo jogo da Capcom"
+                                     width="400" height="225" loading="lazy">
+                                <span class="badge badge-ps">PlayStation</span>
+                            </div>
+                            <div class="card-content">
+                                <div class="article-meta">
+                                    <span class="category-tag category-noticias">Notícias</span>
+                                    <time datetime="2026-04-20">20 Abr 2026</time>
+                                </div>
+                                <h3 class="card-title">PRAGMATA é GOTY? Veja o novo jogo da Capcom</h3>
+                                <p class="card-excerpt">O novo título da Capcom mistura ação, hacking e ficção científica em uma aventura na Lua. Confira o que achamos.</p>
+                                <div class="card-footer">
+                                    <span class="author">Redação GG Level</span>
+                                    <span class="read-time">6 min</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                    <!-- ══════ FIM DO CARD 1 ══════ -->
+
+                    <!-- 
+                      📋 PARA ADICIONAR MAIS CARDS:
+                      → Copie TUDO entre "CARD DE NOTÍCIA 1" e "FIM DO CARD 1"
+                      → Cole aqui embaixo
+                      → Troque todos os [TROCAR] com os dados do novo artigo
+                      → Repita até ter 6 cards (recomendado)
+                      
+                      EXEMPLO de como ficaria o href de cada card:
+                      Card 1: artigos/noticias/gta-6-lancamento.html
+                      Card 2: artigos/noticias/ps6-especificacoes.html
+                      Card 3: artigos/reviews/zelda-echoes.html
+                      ...e assim por diante
+                    -->
+
+                </div>
+
+                <!-- LINK PARA VER TODAS AS NOTÍCIAS -->
+                <div class="load-more-wrapper">
+                    <a href="categoria.html" class="btn-load-more">
+                        Ver Todas as Notícias →
+                    </a>
+                    <!-- 
+                      ✅ AULA: Trocamos o <button> por <a> (link)
+                      → Button não fazia nada (precisaria de backend)
+                      → Link leva para categoria.html com todos os artigos
+                      → O CSS do .btn-load-more já estiliza bonito
+                      → Isso é o que blogs profissionais fazem
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SEÇÃO REVIEWS - Com grade diferente para variar layout
+        ═══════════════════════════════════════════════════════ -->
+        <section class="reviews-section" aria-label="Reviews recentes">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Reviews Recentes</h2>
+                    <a href="categoria.html?cat=reviews" class="see-all-link">Ver todos →</a>
+                </div>
+
+                <div class="reviews-grid">
+                    <!-- 
+                      ╔══════════════════════════════════════════════════════════════╗
+                      ║  📝 COMO USAR: CARDS DE REVIEW                             ║
+                      ║                                                             ║
+                      ║  Reviews são análises/avaliações de jogos.                 ║
+                      ║  O card de review tem uma NOTA (score) que aparece          ║
+                      ║  sobre a imagem, e prós/contras embaixo.                   ║
+                      ║                                                             ║
+                      ║  COMO FUNCIONA A NOTA:                                     ║
+                      ║  → 9.0-10: "Excelente" | 8.0-8.9: "Ótimo"               ║
+                      ║  → 7.0-7.9: "Bom" | 6.0-6.9: "Regular"                  ║
+                      ║  → Abaixo de 6: "Fraco"                                   ║
+                      ║                                                             ║
+                      ║  COPIE o bloco <article> para adicionar mais reviews.      ║
+                      ║  Recomendado: 3 cards (1 linha de 3 no desktop)            ║
+                      ╚══════════════════════════════════════════════════════════════╝
+                    -->
+
+                    <!-- ══════ REVIEW CARD 1 (COPIE ESTE BLOCO PARA CRIAR MAIS) ══════ -->
+                    <!-- Reviews serão adicionadas conforme novas publicações -->
+                    <!-- ══════ FIM DO REVIEW CARD 1 ══════ -->
+
+                    <!-- 
+                      📋 PARA ADICIONAR MAIS REVIEWS:
+                      → Copie TUDO entre "REVIEW CARD 1" e "FIM DO REVIEW CARD 1"
+                      → Cole aqui embaixo
+                      → Troque todos os [TROCAR]
+                      → Repita até ter 3 cards
+                    -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════
+             SIDEBAR COM NEWSLETTER E CATEGORIAS
+             → Newsletter ajuda a criar audiência recorrente
+             → Categorias facilitam a navegação e links internos
+        ═══════════════════════════════════════════════════════ -->
+        <section class="content-with-sidebar">
+            <div class="container">
+                <div class="two-column-layout">
+                    
+                    <!-- COLUNA PRINCIPAL - Mais Lidas -->
+                    <div class="main-column">
+                        <h2 class="section-title">🔥 Mais Lidas da Semana</h2>
+                        <!-- 
+                          ╔══════════════════════════════════════════════════════════════╗
+                          ║  📝 COMO USAR: LISTA DE MAIS LIDAS (TRENDING)              ║
+                          ║                                                             ║
+                          ║  Esta seção mostra os artigos mais populares.               ║
+                          ║  Cada item tem um NÚMERO de ranking + título clicável.      ║
+                          ║                                                             ║
+                          ║  QUANDO ATUALIZAR:                                         ║
+                          ║  → Semanalmente (ou quando tiver dados de analytics)       ║
+                          ║  → Coloque os artigos com mais acessos/views primeiro      ║
+                          ║  → Se não tiver analytics ainda, coloque os mais recentes  ║
+                          ║                                                             ║
+                          ║  COPIE o bloco <article> para adicionar mais itens.        ║
+                          ║  Recomendado: 5 itens                                      ║
+                          ╚══════════════════════════════════════════════════════════════╝
+                        -->
+                        <div class="trending-list">
+
+                            <!-- ══════ TRENDING ITEM 1 (COPIE PARA CRIAR MAIS) ══════ -->
+                            <article class="trending-item">
+                                <span class="trending-number">1</span>
+                                <div class="trending-content">
+                                    <h3><a href="artigos/noticias/pragmata.html">PRAGMATA é GOTY? Veja o novo jogo da Capcom</a></h3>
+                                    <div class="article-meta">
+                                        <time datetime="2026-04-20">20 Abr</time>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- ══════ FIM DO TRENDING ITEM 1 ══════ -->
+
+                            <!-- 
+                              📋 PARA ADICIONAR MAIS ITENS:
+                              → Copie entre "TRENDING ITEM 1" e "FIM DO TRENDING ITEM 1"
+                              → Cole aqui embaixo
+                              → Troque o número (2, 3, 4, 5)
+                              → Troque o título e link
+                              → Repita até ter 5 itens
+                            -->
+
+                        </div>
+                    </div>
+
+                    <!-- SIDEBAR -->
+                    <aside class="sidebar">
+                        <!-- 
+                          ✅ AULA: Tag <aside>
+                          → Indica conteúdo relacionado mas secundário
+                          → Google entende que não é o conteúdo principal
+                          → Ideal para sidebar, widgets, banners, etc.
+                          → O conteúdo principal da página fica na <main>
+                          → A sidebar complementa, mas não é essencial
+                        -->
+
+                        <!-- NEWSLETTER -->
+                        <div class="sidebar-widget newsletter-widget">
+                            <h3 class="widget-title">📬 Newsletter Gamer</h3>
+                            <p>Receba as melhores notícias de games toda semana direto no seu email!</p>
+                            <form class="newsletter-form" action="#" method="POST">
+                                <!-- 
+                                  ✅ AULA: Formulário de Newsletter
+                                  → action="#" é temporário. Quando tiver um serviço de email
+                                    (Mailchimp, ConvertKit, etc.), troque pelo URL deles
+                                  → COMO CONFIGURAR:
+                                    1. Crie conta no Mailchimp (gratuito até 500 contatos)
+                                    2. Crie uma lista/audiência
+                                    3. Pegue o URL do formulário embed
+                                    4. Troque o action="#" pelo URL do Mailchimp
+                                    5. Pode ser necessário trocar o name="email" também
+                                -->
+                                <input type="email" name="email" placeholder="Seu melhor email" 
+                                       required aria-label="Email para newsletter">
+                                <button type="submit" class="btn-newsletter">Inscrever-se</button>
+                            </form>
+                            <small>Sem spam. Cancele quando quiser.</small>
+                        </div>
+
+                        <!-- CATEGORIAS -->
+                        <div class="sidebar-widget categories-widget">
+                            <h3 class="widget-title">📁 Categorias</h3>
+                            <ul class="category-list">
+                                <!-- 
+                                  ✅ AULA: Lista de Categorias
+                                  → Cada link aponta para a página de categoria
+                                  → O (XX) mostra quantos artigos tem naquela categoria
+                                  → TROQUE os números pelos reais quando tiver artigos
+                                  → Se não tiver artigos ainda, pode remover o <span class="count">
+                                  → Adicione ou remova categorias conforme seu blog crescer
+                                -->
+                                <li><a href="categoria.html?cat=noticias">📰 Notícias <span class="count">(1)</span></a></li>
+                                <li><a href="categoria.html?cat=reviews">⭐ Reviews <span class="count">(0)</span></a></li>
+                                <li><a href="categoria.html?cat=lancamentos">🚀 Lançamentos <span class="count">(0)</span></a></li>
+                                <li><a href="categoria.html?cat=esports">🏆 Esports <span class="count">(0)</span></a></li>
+                                <li><a href="categoria.html?cat=dicas">💡 Dicas & Guias <span class="count">(0)</span></a></li>
+                            </ul>
+                            <!-- 
+                              ✅ AULA: Links internos de categorias
+                              → Distribuem "link juice" (autoridade) pelo site
+                              → Ajudam o Google a encontrar todas as páginas
+                              → Facilitam a navegação do usuário
+                              → Mais links internos = melhor indexação
+                              → DICA: Quando uma categoria tiver 0 artigos, 
+                                você pode esconder ela até publicar o primeiro
+                            -->
+                        </div>
+
+                        <!-- TAGS POPULARES -->
+                        <div class="sidebar-widget tags-widget">
+                            <h3 class="widget-title">🏷️ Tags Populares</h3>
+                            <div class="tags-cloud">
+                                <!-- 
+                                  ✅ AULA: Nuvem de Tags
+                                  → Tags são palavras-chave que agrupam artigos
+                                  → Diferente de categorias (mais gerais), tags são específicas
+                                  → Exemplo: Categoria "Notícias" + Tag "GTA 6"
+                                  → Cada tag deveria linkar para uma página que lista 
+                                    todos os artigos com aquela tag
+                                  → POR ENQUANTO os href estão com # (vazio)
+                                  → Troque quando criar as páginas de tag
+                                  → TROQUE as tags abaixo pelas que fazem sentido pro seu blog
+                                -->
+                                <a href="#" class="tag">Pragmata</a>
+                                <a href="#" class="tag">Capcom</a>
+                                <a href="#" class="tag">PS5</a>
+                                <a href="#" class="tag">Ficção Científica</a>
+                                <a href="#" class="tag">Lançamentos 2026</a>
+                                <!-- Adicione mais tags conforme publicar artigos -->
+                            </div>
+                        </div>
+
+                        <!-- REDES SOCIAIS -->
+                        <div class="sidebar-widget social-widget">
+                            <h3 class="widget-title">🌐 Redes Sociais</h3>
+                            <div class="social-links">
+                                <!-- 
+                                  ✅ AULA: Links de Redes Sociais
+                                  → TROQUE cada href="#" pelo link REAL da sua rede social
+                                  → Exemplo: href="https://youtube.com/@SeuCanal"
+                                  → Os números de seguidores são opcionais
+                                  → Se não quiser mostrar, remova o <span class="followers">
+                                  → REMOVA as redes que você não tem (não deixe link vazio)
+                                  → rel="noopener noreferrer" é OBRIGATÓRIO em target="_blank"
+                                -->
+                                <a href="https://youtube.com/@GGLevelNews" class="social-link youtube" aria-label="YouTube" rel="noopener noreferrer" target="_blank">
+                                    YouTube <span class="followers">@GGLevelNews</span>
+                                </a>
+                                <a href="https://x.com/GGLevelNews" class="social-link twitter" aria-label="Twitter/X" rel="noopener noreferrer" target="_blank">
+                                    Twitter/X <span class="followers">@GGLevelNews</span>
+                                </a>
+                                <a href="https://instagram.com/gglevelnews" class="social-link instagram" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
+                                    Instagram <span class="followers">@gglevelnews</span>
+                                </a>
+                                <!-- 
+                                  Adicione mais redes conforme necessário.
+                                  Classes disponíveis: youtube, twitter, instagram, discord, twitch, tiktok
+                                -->
+                            </div>
+                            <!-- 
+                              ✅ AULA: rel="noopener noreferrer"
+                              → SEGURANÇA! Obrigatório em links target="_blank"
+                              → target="_blank" = abre em nova aba
+                              → noopener = impede que a página de destino acesse window.opener
+                              → noreferrer = não envia informação de origem
+                              → Protege contra ataques de phishing
+                              → Google recomenda usar SEMPRE em links externos
+                            -->
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 12: FOOTER - Rodapé do Site
+         → Use <footer> semântico
+         → Ótimo lugar para links internos adicionais
+         → Links de footer ajudam na indexação do Google
+    ═══════════════════════════════════════════════════════════ -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- SOBRE -->
+                <div class="footer-section">
+                    <h3 class="footer-title">GG Level News</h3>
+                    <p>Seu portal completo de notícias, reviews e novidades do mundo dos games. Cobrindo todas as plataformas desde 2024.</p>
+                </div>
+
+                <!-- LINKS RÁPIDOS -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Links Rápidos</h3>
+                    <nav aria-label="Links do rodapé">
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="categoria.html?cat=noticias">Notícias</a></li>
+                            <li><a href="categoria.html?cat=reviews">Reviews</a></li>
+                            <li><a href="categoria.html?cat=lancamentos">Lançamentos</a></li>
+                            <li><a href="categoria.html?cat=esports">Esports</a></li>
+                            <li><a href="sobre.html">Sobre Nós</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- PLATAFORMAS -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Plataformas</h3>
+                    <ul class="footer-links">
+                        <li><a href="categoria.html?cat=playstation">PlayStation</a></li>
+                        <li><a href="categoria.html?cat=xbox">Xbox</a></li>
+                        <li><a href="categoria.html?cat=nintendo">Nintendo</a></li>
+                        <li><a href="categoria.html?cat=pc">PC Gaming</a></li>
+                        <li><a href="categoria.html?cat=mobile">Mobile</a></li>
+                        <li><a href="categoria.html?cat=vr">VR Gaming</a></li>
+                    </ul>
+                </div>
+
+                <!-- LEGAL -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="cookies.html">Política de Cookies</a></li>
+                    </ul>
+                    <!-- 
+                      ✅ AULA: Páginas legais
+                      → Política de Privacidade é OBRIGATÓRIA por lei (LGPD)
+                      → Google AdSense exige essas páginas
+                      → Transmite profissionalismo e confiança (E-E-A-T)
+                    -->
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024-2026 GG Level News. Todos os direitos reservados.</p>
+                <p class="footer-seo-text">
+                    GG Level News - Notícias de Games, Reviews de Jogos, Lançamentos, Esports e Dicas. 
+                    Cobertura completa de PlayStation, Xbox, Nintendo, PC Gaming e Mobile.
+                </p>
+                <!-- 
+                  ✅ AULA: Texto SEO no footer
+                  → Reforça palavras-chave de forma natural
+                  → NÃO exagere (keyword stuffing é penalizado)
+                  → Deve ser um texto natural e útil
+                -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SEÇÃO 13: COOKIE CONSENT (LGPD)
+         → Obrigatório por lei no Brasil (LGPD)
+         → Google também exige para AdSense/Analytics
+    ═══════════════════════════════════════════════════════════ -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Consentimento de cookies">
+        <div class="cookie-content">
+            <p> Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa 
+               <a href="cookies.html">Política de Cookies</a>.</p>
+            <div class="cookie-actions">
+                <button class="btn-cookie-accept" id="cookieAccept">Aceitar</button>
+                <button class="btn-cookie-reject" id="cookieReject">Rejeitar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo da página">↑</button>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js"></script>
+    <!-- 
+      ✅ AULA: Script no final do body
+      → Carrega o JS depois do HTML (não bloqueia renderização)
+      → Alternativa: usar "defer" no script do <head>
+      → PERFORMANCE = melhor Core Web Vitals = melhor SEO
+    -->
+</body>
+</html>

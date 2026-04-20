@@ -1,0 +1,112 @@
+# ══════════════════════════════════════════════════════════════════
+#  🎮 GG Level News - Robots.txt
+#  📚 MODO AULA: Controla o acesso dos robôs de busca ao seu site
+#
+#  O QUE É O ROBOTS.TXT:
+#  → Arquivo na raiz do site que diz aos buscadores (Google, Bing, etc.)
+#    quais páginas eles PODEM ou NÃO PODEM acessar
+#  → NÃO é uma proteção de segurança (qualquer um pode acessar a URL)
+#  → É uma "sugestão educada" que buscadores respeitam
+#
+#  ONDE DEVE FICAR: Na raiz do domínio
+#  → https://www.gglevelnews.com.br/robots.txt
+#
+#  COMO TESTAR:
+#  → Google Search Console > Configurações > robots.txt
+#  → Ou: https://www.google.com/webmasters/tools/robots-testing-tool
+# ══════════════════════════════════════════════════════════════════
+
+# ──────────────────────────────────────────────────────
+# REGRA PRINCIPAL: Permitir tudo para todos os buscadores
+# ──────────────────────────────────────────────────────
+User-agent: *
+# User-agent: * = aplica a TODOS os robôs (Google, Bing, Yahoo, etc.)
+
+Allow: /
+# Allow: / = permite acesso a TODAS as páginas
+
+# ──────────────────────────────────────────────────────
+# BLOQUEIOS: Páginas que NÃO devem ser indexadas
+# ──────────────────────────────────────────────────────
+Disallow: /admin/
+# Disallow: /admin/ = bloqueia a área administrativa
+
+Disallow: /api/
+# Bloqueia endpoints de API (se houver)
+
+Disallow: /private/
+# Bloqueia conteúdo privado
+
+Disallow: /*?preview=*
+# Bloqueia previews de artigos não publicados
+
+Disallow: /*?s=*
+# Bloqueia páginas de busca interna (evita conteúdo duplicado)
+
+Disallow: /wp-admin/
+# Se usar WordPress, bloqueia o painel admin
+
+Disallow: /wp-login.php
+# Bloqueia a página de login do WordPress
+
+# ──────────────────────────────────────────────────────
+# SITEMAP: Indica onde está o mapa do site
+# ──────────────────────────────────────────────────────
+Sitemap: https://www.gglevelnews.com.br/sitemap.xml
+# ✅ AULA: Sempre inclua o Sitemap aqui!
+# → Ajuda os buscadores a encontrar o sitemap automaticamente
+# → Mesmo que você envie pelo Search Console, coloque aqui também
+# → Buscadores como Bing/Yahoo leem o robots.txt para achar o sitemap
+
+# ──────────────────────────────────────────────────────
+# REGRAS ESPECÍFICAS POR BUSCADOR (Opcional)
+# ──────────────────────────────────────────────────────
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+# Googlebot é o robô principal do Google
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+# Permite que o Google indexe todas as imagens
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+# ──────────────────────────────────────────────────────
+# BLOQUEAR BOTS INDESEJADOS (economiza banda)
+# ──────────────────────────────────────────────────────
+
+# Bloquear bots de scraping conhecidos
+User-agent: AhrefsBot
+Disallow: /
+# AhrefsBot consome muita banda (ferramenta de SEO de terceiros)
+
+User-agent: SemrushBot
+Disallow: /
+# Semrush também consome banda
+
+User-agent: MJ12bot
+Disallow: /
+# Majestic bot
+
+# ✅ AULA: Bloquear bots de scraping
+# → Esses bots não ajudam SEU SEO, apenas coletam dados
+# → Consomem banda do seu servidor sem benefício
+# → Bloqueá-los é uma boa prática
+
+# ──────────────────────────────────────────────────────
+# CRAWL-DELAY (Opcional)
+# ──────────────────────────────────────────────────────
+# User-agent: *
+# Crawl-delay: 1
+# ✅ AULA: Crawl-delay
+# → Tempo em segundos entre cada requisição do bot
+# → Google IGNORA essa diretiva (usa Search Console para limitar)
+# → Bing e Yahoo respeitam
+# → Use se seu servidor for lento ou tiver pouca banda

@@ -1,0 +1,2050 @@
+/*
+╔══════════════════════════════════════════════════════════════════╗
+║  🎮 GAMEVERSE NEWS - CSS Principal                              ║
+║  📚 MODO AULA: Cada seção está comentada para aprendizado       ║
+║                                                                  ║
+║  DICAS DE PERFORMANCE CSS (SEO):                                ║
+║  1. Use variáveis CSS (Custom Properties) para manutenção       ║
+║  2. Mobile-first: escreva CSS para celular, depois desktop      ║
+║  3. Evite !important (dificulta manutenção)                     ║
+║  4. Minimize seletores profundos (.a .b .c .d = lento)          ║
+║  5. Use classes ao invés de IDs para estilizar                  ║
+║  6. Agrupe media queries para reduzir tamanho do arquivo        ║
+╚══════════════════════════════════════════════════════════════════╝
+*/
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 1: CSS CUSTOM PROPERTIES (Variáveis)
+   → Defina cores, fontes e espaçamentos em um só lugar
+   → Facilita trocar o tema inteiro mudando poucas linhas
+   → Habilita Dark Mode de forma elegante
+═══════════════════════════════════════════════════════════════ */
+
+:root {
+    /* 
+      ✅ AULA: :root
+      → Seleciona o elemento <html>
+      → Variáveis aqui ficam disponíveis em TODO o CSS
+      → Mude uma variável e todo o site muda junto
+    */
+
+    /* ═══ CORES PRINCIPAIS ═══
+       COMO TROCAR AS CORES DO SITE:
+       → Mude APENAS os valores hexadecimais (#XXXXXX)
+       → O site inteiro muda automaticamente!
+       → Para encontrar cores bonitas: https://coolors.co/
+       → Formato: # + 6 caracteres (0-9, A-F)
+       → Exemplo: #FF0000 = vermelho, #00FF00 = verde, #0000FF = azul
+    */
+    --color-primary: #6C3CE1;        /* Roxo principal - cor do site */
+    --color-primary-dark: #5A2DBF;   /* Roxo escuro - usado no hover (quando passa o mouse) */
+    --color-primary-light: #8B5CF6;  /* Roxo claro - usado em destaques suaves */
+    --color-secondary: #FF6B35;      /* Laranja - para chamar atenção */
+    --color-accent: #00D4AA;         /* Verde água - para sucesso/positivo */
+
+    /* CORES DE TEXTO */
+    --color-text: #1A1A2E;           /* Texto principal */
+    --color-text-secondary: #64748B; /* Texto secundário */
+    --color-text-light: #94A3B8;     /* Texto claro */
+
+    /* CORES DE FUNDO */
+    --color-bg: #FFFFFF;             /* Fundo principal */
+    --color-bg-secondary: #F8FAFC;   /* Fundo alternativo */
+    --color-bg-card: #FFFFFF;        /* Fundo dos cards */
+    --color-bg-header: rgba(255, 255, 255, 0.95); /* Header transparente */
+
+    /* BORDAS E SOMBRAS */
+    --color-border: #E2E8F0;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+    /* ═══ TIPOGRAFIA (FONTES) ═══
+       → A primeira fonte é a preferida. Se não carregar, usa a próxima
+       → 'Inter' = fonte moderna do Google Fonts (corpo do texto)
+       → 'Space Grotesk' = fonte para títulos (mais impactante)
+       → -apple-system, BlinkMacSystemFont = fontes nativas do Mac/iPhone
+       → sans-serif = última opção: qualquer fonte sem serifa
+       → PARA TROCAR: vá em fonts.google.com, escolha a fonte,
+         copie o link e troque no <head> do HTML também!
+    */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Space Grotesk', 'Inter', sans-serif;
+
+    /* ═══ ESPAÇAMENTOS ═══
+       → rem = unidade relativa ao tamanho da fonte base (16px)
+       → 1rem = 16px, 0.5rem = 8px, 2rem = 32px
+       → Por que rem e não px? Porque se o usuário aumentar
+         o tamanho da fonte no navegador, tudo se ajusta!
+       → Use essas variáveis em padding, margin, gap, etc.
+       → Manter espaçamento consistente = site profissional
+    */
+    --spacing-xs: 0.25rem;   /* 4px - micro espaço */
+    --spacing-sm: 0.5rem;    /* 8px - espaço pequeno */
+    --spacing-md: 1rem;      /* 16px - espaço médio (padrão) */
+    --spacing-lg: 1.5rem;    /* 24px - espaço grande */
+    --spacing-xl: 2rem;      /* 32px - espaço extra grande */
+    --spacing-2xl: 3rem;     /* 48px - separação entre seções */
+    --spacing-3xl: 4rem;     /* 64px - separação entre blocos grandes */
+
+    /* BORDAS */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+
+    /* ═══ TRANSIÇÕES (ANIMAÇÕES SUAVES) ═══
+       → Transições fazem mudanças visuais serem suaves (não instantâneas)
+       → 150ms = 0.15 segundos (rápida: hover de botões)
+       → 250ms = 0.25 segundos (normal: mudança de cores)
+       → 350ms = 0.35 segundos (lenta: imagens com zoom)
+       → 'ease' = começa devagar, acelera, desacelera no final
+       → CUIDADO: transições muito lentas irritam o usuário
+    */
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+
+    /* LARGURA MÁXIMA */
+    --max-width: 1280px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DARK MODE
+   → Ativado via classe .dark-mode no <body>
+   → Apenas sobrescreve as variáveis de cor
+   → Todo o layout permanece igual
+═══════════════════════════════════════════════════════════════ */
+
+body.dark-mode {
+    /* 
+      ✅ AULA: Como o Dark Mode funciona
+      → Quando o JavaScript adiciona class="dark-mode" ao <body>
+      → Estas variáveis SOBRESCREVEM as do :root
+      → Todo o site muda de cor automaticamente!
+      → Não precisa escrever CSS diferente para cada elemento
+      → O JS salva a preferência no localStorage do navegador
+      → Assim, quando o usuário volta, o tema está salvo
+      
+      COMO PERSONALIZAR:
+      → Troque os valores hex abaixo para mudar as cores do modo escuro
+      → Cores claras viram escuras e vice-versa
+      → Textos que eram escuros ficam claros para contraste
+    */
+    --color-text: #E2E8F0;           /* Texto claro (era escuro) */
+    --color-text-secondary: #94A3B8; /* Texto secundário mais claro */
+    --color-text-light: #64748B;
+    --color-bg: #0F172A;             /* Fundo escuro (era branco) */
+    --color-bg-secondary: #1E293B;   /* Fundo alternativo escuro */
+    --color-bg-card: #1E293B;        /* Cards escuros */
+    --color-bg-header: rgba(15, 23, 42, 0.95); /* Header escuro semi-transparente */
+    --color-border: #334155;         /* Bordas mais sutis */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 2: RESET E BASE
+   → Normaliza diferenças entre navegadores
+   → box-sizing: border-box é ESSENCIAL para layouts
+═══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 
+      ✅ AULA: box-sizing: border-box
+      → Faz com que padding e border sejam incluídos no width/height
+      → Sem isso: width: 100px + padding: 10px = 120px (confuso!)
+      → Com isso: width: 100px + padding: 10px = 100px (correto!)
+    */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Scroll suave ao clicar em links âncora (#section) */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    /* 
+      ✅ AULA: line-height: 1.6
+      → Espaçamento entre linhas de texto
+      → 1.5 a 1.8 é ideal para leitura
+      → Texto apertado cansa o leitor e aumenta taxa de rejeição
+      → Taxa de rejeição alta = pior ranking no Google
+    */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* 
+      ✅ AULA: Imagens responsivas
+      → max-width: 100% impede que a imagem ultrapasse o container
+      → height: auto mantém a proporção
+      → display: block remove espaço fantasma abaixo da imagem
+    */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 3: LAYOUT - CONTAINER
+   → Centraliza e limita a largura do conteúdo
+   → Essencial para leitura confortável em telas grandes
+═══════════════════════════════════════════════════════════════ */
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    /* 
+      ✅ AULA: Container responsivo
+      → max-width limita em telas grandes
+      → margin: 0 auto centraliza horizontalmente
+      → padding lateral evita que o texto encoste na borda
+    */
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 4: HEADER
+═══════════════════════════════════════════════════════════════ */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--color-bg-header);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    transition: background var(--transition-normal);
+    /* 
+      ✅ AULA: Header fixo (sticky)
+      → Fica visível enquanto o usuário scrolla
+      → backdrop-filter: blur cria efeito de vidro fosco
+      → z-index alto garante que fique acima de tudo
+      → Melhora navegação = menor taxa de rejeição = melhor SEO
+    */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    gap: var(--spacing-lg);
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+}
+
+.logo-highlight {
+    color: var(--color-primary);
+}
+
+/* NAVEGAÇÃO */
+.nav-list {
+    display: flex;
+    gap: var(--spacing-xs);
+}
+
+.nav-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-primary);
+    background: rgba(108, 60, 225, 0.08);
+}
+
+/* BOTÕES DO HEADER */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.search-toggle,
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.search-toggle:hover,
+.theme-toggle:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-primary);
+}
+
+/* Ícones do tema */
+.dark-mode .icon-sun { display: block; }
+.dark-mode .icon-moon { display: none; }
+.icon-sun { display: none; }
+.icon-moon { display: block; }
+
+/* MENU HAMBURGER */
+.menu-toggle {
+    display: none; /* Aparece só no mobile */
+    flex-direction: column;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* BARRA DE BUSCA */
+.search-bar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-md) 0;
+    display: none;
+    box-shadow: var(--shadow-md);
+}
+
+.search-bar.active {
+    display: block;
+}
+
+.search-form {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.search-form input {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.search-form input:focus {
+    border-color: var(--color-primary);
+}
+
+.search-form button {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: background var(--transition-fast);
+}
+
+.search-form button:hover {
+    background: var(--color-primary-dark);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 5: HERO - DESTAQUE PRINCIPAL
+═══════════════════════════════════════════════════════════════ */
+
+.hero-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.hero-card {
+    display: grid;
+    /* 
+      ✅ AULA: CSS Grid
+      → display: grid = ativa o layout em grade
+      → grid-template-columns: 1fr 1fr = 2 colunas iguais
+      → 1fr = 1 fração do espaço disponível
+      → 1fr 1fr = 50% | 50%
+      → Se fosse 2fr 1fr = 66% | 33%
+      → gap = espaço entre as colunas
+    */
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    /* overflow: hidden = esconde qualquer conteúdo que vaze para fora.
+       Necessário para que o border-radius funcione na imagem */
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    /* transition = faz a mudança de transform e box-shadow ser suave no hover */
+}
+
+.hero-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.hero-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.hero-card:hover .hero-image img {
+    transform: scale(1.03);
+}
+
+.badge {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(4px);
+}
+
+/* 
+  ✅ AULA: Cores dos Badges (etiquetas)
+  → Cada plataforma tem sua cor oficial
+  → linear-gradient = degradê (mistura de 2 cores)
+  → 135deg = ângulo do degradê (diagonal)
+  → PARA ADICIONAR NOVAS: .badge-seuNome { background: #COR; }
+*/
+.badge-destaque { background: linear-gradient(135deg, #FF6B35, #FF3D00); } /* Laranja degradê */
+.badge-ps { background: #003791; }       /* Azul PlayStation */
+.badge-xbox { background: #107C10; }     /* Verde Xbox */
+.badge-nintendo { background: #E60012; } /* Vermelho Nintendo */
+.badge-pc { background: #1B2838; }       /* Cinza escuro Steam/PC */
+.badge-esports { background: #6C3CE1; }  /* Roxo Esports */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-xl);
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.category-tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(108, 60, 225, 0.1);
+    color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.category-noticias { background: rgba(59, 130, 246, 0.1); color: #3B82F6; }
+.category-reviews { background: rgba(245, 158, 11, 0.1); color: #F59E0B; }
+.category-esports { background: rgba(108, 60, 225, 0.1); color: #6C3CE1; }
+.category-dicas { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-title a:hover {
+    color: var(--color-primary);
+}
+
+.hero-excerpt {
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 6: GRID DE NOTÍCIAS
+   → CSS Grid para layout responsivo dos cards
+   → auto-fill/minmax = responsivo SEM media query!
+═══════════════════════════════════════════════════════════════ */
+
+.latest-news,
+.reviews-section {
+    padding: var(--spacing-2xl) 0;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.see-all-link {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.see-all-link:hover {
+    text-decoration: underline;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--spacing-xl);
+    /* 
+      ✅ AULA: CSS Grid responsivo
+      → auto-fill: cria colunas automaticamente conforme o espaço
+      → minmax(340px, 1fr): cada card tem no mínimo 340px
+      → Se a tela é grande, cabem 3 cards. Se é pequena, 1 card
+      → Tudo automático, sem media queries!
+    */
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 7: CARDS DE NOTÍCIA
+═══════════════════════════════════════════════════════════════ */
+
+.news-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-link {
+    display: block;
+}
+
+.card-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    /* 
+      ✅ AULA: aspect-ratio
+      → Mantém proporção 16:9 (padrão de vídeo/thumbnail)
+      → Evita layout shift (CLS) quando a imagem carrega
+      → CLS é uma das Core Web Vitals medidas pelo Google
+    */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.news-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: var(--spacing-lg);
+}
+
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    /* 
+      ✅ AULA: line-clamp
+      → Limita o texto a 3 linhas e adiciona "..."
+      → Mantém os cards com altura uniforme
+      → Boa experiência visual = menor taxa de rejeição
+    */
+}
+
+.card-excerpt {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 8: REVIEW CARDS
+═══════════════════════════════════════════════════════════════ */
+
+.review-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.review-score {
+    position: absolute;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+}
+
+.review-score .score {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+}
+
+.review-score .score-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.review-pros-cons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-sm);
+}
+
+.pro, .con {
+    font-size: 0.75rem;
+    padding: 2px var(--spacing-sm);
+    border-radius: var(--radius-sm);
+}
+
+.pro { background: rgba(16, 185, 129, 0.1); color: #10B981; }
+.con { background: rgba(239, 68, 68, 0.1); color: #EF4444; }
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 9: LAYOUT DUAS COLUNAS (Conteúdo + Sidebar)
+═══════════════════════════════════════════════════════════════ */
+
+.content-with-sidebar {
+    padding: var(--spacing-2xl) 0;
+    background: var(--color-bg-secondary);
+}
+
+.two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    /* 
+      ✅ AULA: Layout de 2 colunas
+      → 1fr = coluna principal (pega todo espaço restante)
+      → 380px = sidebar com largura fixa de 380 pixels
+      → Isso garante que a sidebar não fique nem grande nem pequena demais
+      → No mobile (media query abaixo), muda para 1 coluna
+    */
+    gap: var(--spacing-2xl);
+    align-items: start;
+    /* align-items: start = as colunas começam alinhadas no topo
+       (sem isso, se uma coluna é maior, a menor ficaria esticada) */
+}
+
+/* TRENDING LIST */
+.trending-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.trending-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--color-bg-card);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.trending-item:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.trending-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    min-width: 40px;
+    text-align: center;
+}
+
+.trending-content h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-xs);
+}
+
+.trending-content h3 a:hover {
+    color: var(--color-primary);
+}
+
+.trending-content .article-meta {
+    margin-bottom: 0;
+    font-size: 0.8rem;
+}
+
+.views {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 10: SIDEBAR WIDGETS
+═══════════════════════════════════════════════════════════════ */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    position: sticky;
+    top: 90px;
+    /* 
+      ✅ AULA: Sidebar sticky
+      → A sidebar acompanha o scroll do usuário
+      → top: 90px = distância do topo (abaixo do header)
+      → Mantém widgets visíveis = mais cliques
+    */
+}
+
+.sidebar-widget {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    border: 1px solid var(--color-border);
+}
+
+.widget-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* NEWSLETTER */
+/* 
+  ✅ AULA: Widget de Newsletter
+  → Fundo com degradê (gradient) para se destacar da sidebar
+  → border: none = remove a borda que os outros widgets têm
+  → Essa é a seção mais importante da sidebar:
+    capturar emails = construir audiência!
+*/
+.newsletter-widget {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    border: none;
+}
+
+.newsletter-widget .widget-title {
+    color: white;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-widget p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-md);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.newsletter-form input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input:focus {
+    border-color: white;
+}
+
+.btn-newsletter {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: white;
+    color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    transition: all var(--transition-fast);
+}
+
+.btn-newsletter:hover {
+    background: var(--color-bg-secondary);
+    transform: translateY(-1px);
+}
+
+.newsletter-widget small {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: var(--spacing-sm);
+}
+
+/* CATEGORIAS */
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.category-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+}
+
+.category-list li a:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-primary);
+    padding-left: var(--spacing-lg);
+}
+
+.count {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+}
+
+/* TAGS */
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.tag {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.tag:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* REDES SOCIAIS */
+/* 
+  ✅ AULA: Links de redes sociais
+  → Cada rede tem sua cor oficial (brand color)
+  → flex-direction: column = empilha verticalmente
+  → Mostrar contagem de seguidores dá credibilidade
+  → PARA ADICIONAR NOVA REDE:
+    1. Adicione no HTML: <a class="social-link novarede" href="...">
+    2. Adicione no CSS: .social-link.novarede { background: #COR_DA_REDE; }
+*/
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.social-link .followers {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.social-link.youtube { background: #FF0000; }
+.social-link.twitter { background: #1DA1F2; }
+.social-link.instagram { background: linear-gradient(135deg, #833AB4, #FD1D1D, #FCAF45); }
+.social-link.discord { background: #5865F2; }
+.social-link.twitch { background: #9146FF; }
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 11: BOTÃO CARREGAR MAIS
+═══════════════════════════════════════════════════════════════ */
+
+.load-more-wrapper {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+}
+
+.btn-load-more {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all var(--transition-fast);
+}
+
+.btn-load-more:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 12: FOOTER
+═══════════════════════════════════════════════════════════════ */
+
+.site-footer {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-3xl) 0 var(--spacing-xl);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    /* 
+      ✅ AULA: Grid do footer
+      → 2fr 1fr 1fr 1fr = 4 colunas
+      → A primeira (2fr) é o DOBRO das outras (1fr)
+      → Isso dá mais espaço para a descrição do site
+      → As 3 colunas menores são para listas de links
+      → 2fr = 40% do espaço | 1fr = 20% cada
+    */
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+    padding-left: var(--spacing-sm);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+.footer-seo-text {
+    margin-top: var(--spacing-sm);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 13: COOKIE BANNER (LGPD)
+   → Obrigatório por lei no Brasil (LGPD) e Europa (GDPR)
+   → Aparece na primeira visita, some após aceitar/rejeitar
+   → O JavaScript controla quando mostrar/esconder
+   → position: fixed = fica fixo na tela, não rola com o conteúdo
+   → z-index: 9999 = fica ACIMA de tudo na página
+═══════════════════════════════════════════════════════════════ */
+
+.cookie-banner {
+    position: fixed;   /* Fixo na tela - não se move com scroll */
+    bottom: 0;         /* Grudado na parte de baixo */
+    left: 0;           /* Da esquerda... */
+    right: 0;          /* ...até a direita (largura total) */
+    z-index: 9999;     /* Acima de TUDO na página */
+    background: var(--color-bg-card);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-lg);
+    display: none;     /* Começa escondido - JS mostra quando necessário */
+}
+
+.cookie-banner.active {
+    display: block;
+}
+
+.cookie-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+}
+
+.cookie-content p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.cookie-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-shrink: 0;
+}
+
+.btn-cookie-accept {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: background var(--transition-fast);
+}
+
+.btn-cookie-accept:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn-cookie-reject {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.btn-cookie-reject:hover {
+    border-color: var(--color-text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 14: BOTÃO VOLTAR AO TOPO
+═══════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 14: BOTÃO VOLTAR AO TOPO
+   → Aparece quando o usuário rola para baixo (controlado pelo JS)
+   → Facilita a navegação em páginas longas
+   → opacity: 0 + visibility: hidden = começa invisível
+   → Quando o JS adiciona class .visible, aparece suavemente
+═══════════════════════════════════════════════════════════════ */
+
+.back-to-top {
+    position: fixed;       /* Fixo na tela */
+    bottom: 30px;          /* 30px acima da parte de baixo */
+    right: 30px;           /* 30px da direita */
+    width: 45px;
+    height: 45px;
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--radius-full); /* Circular (9999px = círculo) */
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;   /* Centraliza o ícone verticalmente */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    box-shadow: var(--shadow-lg);
+    opacity: 0;            /* Invisível no início */
+    visibility: hidden;    /* Não clicável quando invisível */
+    transition: all var(--transition-normal); /* Aparece/desaparece suavemente */
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-3px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 15: PÁGINA DE ARTIGO
+═══════════════════════════════════════════════════════════════ */
+
+.article-header {
+    padding: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.article-header .category-tag {
+    display: inline-block;
+    margin-bottom: var(--spacing-md);
+}
+
+.article-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-author-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+}
+
+.article-featured-image {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: var(--spacing-2xl);
+    aspect-ratio: 21 / 9;
+}
+
+.article-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTEÚDO DO ARTIGO */
+/* 
+  ✅ AULA: Estilo do corpo do artigo
+  → max-width: 750px = limita a largura para leitura confortável
+    (linhas muito largas são difíceis de ler)
+  → O ideal é 50-75 caracteres por linha
+  → margin: 0 auto = centraliza o bloco na página
+  → Cada elemento (h2, p, ul, blockquote) tem espaçamento
+    cuidadosamente calculado para boa leitura
+*/
+.article-body {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.article-body h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--color-border);
+}
+
+.article-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+}
+
+.article-body p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text);
+}
+
+.article-body ul, .article-body ol {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+}
+
+.article-body li {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.7;
+    list-style: disc;
+}
+
+.article-body ol li {
+    list-style: decimal;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--color-primary);
+    /* 
+      ✅ AULA: Estilo do blockquote (citação)
+      → border-left = barra colorida na lateral esquerda
+      → background diferente destaca a citação do texto normal
+      → border-radius: 0 10px 10px 0 = cantos arredondados só à direita
+        (4 valores: cima-esq, cima-dir, baixo-dir, baixo-esq)
+      → italic = dá cara de "citação"
+      → DICA: Citações bem formatadas podem virar Featured Snippets no Google!
+    */
+    padding: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    background: var(--color-bg-secondary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.article-body img {
+    border-radius: var(--radius-md);
+    margin: var(--spacing-xl) 0;
+}
+
+/* Figcaption (legenda de imagem) */
+.article-body figure {
+    margin: var(--spacing-xl) 0;
+}
+
+.article-body figcaption {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-top: var(--spacing-sm);
+    font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   VÍDEO RESPONSIVO (YouTube, Twitch, etc.)
+   → Mantém proporção 16:9 em qualquer tamanho de tela
+   → O iframe do YouTube preenche 100% do container
+   → Funciona em mobile, tablet e desktop
+═══════════════════════════════════════════════════════════════ */
+.video-container {
+    /* 
+      ✅ AULA COMPLETA: Vídeo responsivo (truque do padding)
+      → Este é um truque clássico para manter proporção 16:9
+      → Como funciona:
+        1. height: 0 = o container tem altura zero
+        2. padding-bottom: 56.25% = cria a altura usando padding
+           (56.25% = 9÷16 = proporção 16:9 de vídeo)
+        3. O iframe é position: absolute e preenche 100%
+      → Resultado: o vídeo se adapta a QUALQUER largura de tela
+        mantendo sempre a proporção correta de 16:9
+      → Funciona para YouTube, Twitch, Vimeo, etc.
+      
+      COMO USAR NO HTML:
+      <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/ID_DO_VIDEO"...></iframe>
+      </div>
+    */
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 9÷16 = 0.5625 = 56.25% = proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    margin: var(--spacing-xl) 0;
+    background: var(--color-bg-secondary); /* Fundo cinza enquanto o vídeo carrega */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius-md);
+}
+
+.article-body a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* COMPARTILHAR ARTIGO */
+.share-section {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin: var(--spacing-2xl) 0;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.share-section span {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.share-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.share-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    transition: all var(--transition-fast);
+}
+
+.share-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.share-btn.twitter { background: #1DA1F2; }
+.share-btn.facebook { background: #1877F2; }
+.share-btn.whatsapp { background: #25D366; }
+.share-btn.telegram { background: #0088cc; }
+.share-btn.copy-link { background: var(--color-text-secondary); }
+
+/* ARTIGOS RELACIONADOS */
+.related-articles {
+    padding: var(--spacing-2xl) 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 16: PÁGINA DE CATEGORIA
+═══════════════════════════════════════════════════════════════ */
+
+.category-header {
+    padding: var(--spacing-2xl) 0;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    text-align: center;
+}
+
+.category-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+}
+
+.category-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.category-content {
+    padding: var(--spacing-2xl) 0;
+}
+
+/* BREADCRUMB */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) 0;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+}
+
+.breadcrumb a {
+    color: var(--color-primary);
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    color: var(--color-text-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 17: PÁGINA SOBRE
+═══════════════════════════════════════════════════════════════ */
+
+.about-hero {
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+}
+
+.about-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.about-content {
+    padding: var(--spacing-3xl) 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-2xl);
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-secondary);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.team-member {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    margin: 0 auto var(--spacing-md);
+}
+
+.team-member h3 {
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.team-member p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 18: PÁGINA DE CONTATO
+═══════════════════════════════════════════════════════════════ */
+
+.contact-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: inherit;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-primary);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.btn-submit {
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-submit:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+}
+
+.contact-info h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-info-item {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+}
+
+.contact-info-item h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-info-item p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 19: PAGINAÇÃO
+═══════════════════════════════════════════════════════════════ */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-2xl) 0;
+}
+
+.pagination a,
+.pagination span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-fast);
+}
+
+.pagination a:hover {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+.pagination .active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 20: RESPONSIVIDADE (Mobile First)
+   
+   ✅ AULA: Media Queries
+   → Adapte o layout para diferentes tamanhos de tela
+   → O Google usa Mobile-First Indexing desde 2020
+   → Isso significa: o Google vê SEU SITE MOBILE primeiro
+   → Se o mobile está ruim, seu ranking CAI mesmo no desktop
+   
+   BREAKPOINTS COMUNS:
+   → 768px: Tablet
+   → 1024px: Desktop pequeno
+   → 1280px: Desktop grande
+═══════════════════════════════════════════════════════════════ */
+
+/* TABLET E ABAIXO (< 1024px) */
+/* 
+  ✅ AULA: O que muda no tablet?
+  → Hero vira 1 coluna (grid-template-columns: 1fr)
+  → Sidebar perde o sticky (fica estática abaixo do conteúdo)
+  → Footer muda de 4 para 2 colunas
+  → Contato também vira 1 coluna
+  → Regra: se algo tem 2+ colunas no desktop, reduza no tablet
+*/
+@media (max-width: 1024px) {
+    .hero-card {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        min-height: 300px;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .two-column-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE (< 768px) */
+/* 
+  ✅ AULA: O que muda no celular?
+  → Navegação vira menu hambúrguer (display: none → display: block)
+  → Menu aparece como dropdown quando .active é adicionado pelo JS
+  → Todos os grids viram 1 coluna (grid-template-columns: 1fr)
+  → Fontes ficam menores para caber na tela
+  → Cookie banner empilha texto e botões verticalmente
+  → Botões de compartilhar usam flex-wrap para quebrar linha
+  
+  DICA: Para testar no computador:
+  → Abra o DevTools (F12 no Chrome)
+  → Clique no ícone de celular/tablet (canto superior esquerdo)
+  → Ou arraste a janela para ficar estreita
+*/
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--spacing-md);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        padding: var(--spacing-md);
+        font-size: 1rem;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 1.3rem;
+    }
+
+    .hero-content {
+        padding: var(--spacing-md);
+    }
+
+    .hero-excerpt {
+        font-size: 0.9rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .category-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .share-section {
+        flex-direction: column;
+    }
+
+    .share-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* MOBILE PEQUENO (< 480px) */
+/* 
+  ✅ AULA: Ajustes para telas muito pequenas (iPhone SE, etc.)
+  → Reduz font-size base para 15px (de 16px)
+  → Diminui paddings e espaçamentos
+  → Botão voltar-ao-topo fica menor e mais perto da borda
+*/
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero-title {
+        font-size: 1.15rem;
+    }
+
+    .trending-item {
+        padding: var(--spacing-md);
+    }
+
+    .trending-number {
+        font-size: 1.5rem;
+    }
+
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 21: ANIMAÇÕES (Sem exagero - Performance!)
+   → @keyframes define a animação (de onde para onde)
+   → .animate-in é a classe que o JavaScript adiciona nos elementos
+   → O JS usa Intersection Observer para detectar quando o elemento
+     aparece na tela, e só então adiciona a classe
+   → Resultado: elementos aparecem suavemente conforme você rola
+═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;              /* Começa invisível */
+        transform: translateY(20px); /* Começa 20px abaixo */
+    }
+    to {
+        opacity: 1;              /* Termina visível */
+        transform: translateY(0);    /* Termina na posição normal */
+    }
+}
+
+.animate-in {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* 
+  ✅ AULA: Acessibilidade - prefers-reduced-motion
+  → Respeita usuários que desativam animações no SO
+  → Obrigatório para acessibilidade WCAG 2.1
+  → Google valoriza acessibilidade
+*/
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO 22: UTILITÁRIOS
+═══════════════════════════════════════════════════════════════ */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+    /* 
+      ✅ AULA: Screen Reader Only
+      → Esconde visualmente mas leitores de tela ainda leem
+      → Use para textos descritivos de acessibilidade
+    */
+}
+
+/* PRINT STYLES - Para quando o usuário imprime */
+/* 
+  ✅ AULA: Estilos de impressão
+  → @media print = CSS que só é aplicado quando o usuário imprime a página
+  → Escondemos header, footer, sidebar etc. (não faz sentido no papel)
+  → Fundo branco e texto preto = economia de tinta
+  → a[href]::after = mostra a URL dos links entre parênteses
+    Exemplo: "Clique aqui (https://site.com)" no papel impresso
+  → DICA: Poucos sites fazem isso, mas é boa prática de acessibilidade
+*/
+@media print {
+    .site-header,
+    .site-footer,
+    .sidebar,
+    .cookie-banner,
+    .back-to-top,
+    .share-section {
+        display: none;
+    }
+
+    body {
+        color: #000;
+        background: #fff;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8rem;
+        color: #666;
+    }
+}

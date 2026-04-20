@@ -1,0 +1,74 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  📁 ORGANIZAÇÃO DA PASTA DE IMAGENS                              ║
+╚══════════════════════════════════════════════════════════════════╝
+
+ESTRUTURA:
+images/
+├── site/                          ← Imagens do site (logo, favicon, etc.)
+│   ├── favicon.ico
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── apple-touch-icon.png (180x180)
+│   ├── logo.png (300x60)
+│   ├── og-banner.jpg (1200x630)
+│   ├── avatar-placeholder.jpg (100x100)
+│   └── icon-72x72.png até icon-512x512.png (PWA)
+│
+├── noticias/                      ← Imagens de artigos de notícias
+│   ├── gta-6-lancamento/          ← Pasta por artigo (mesmo slug)
+│   │   ├── capa.jpg (1200x630)   ← Imagem destaque
+│   │   ├── gameplay-01.jpg        ← Imagens do corpo
+│   │   └── mapa.jpg
+│   └── ps6-revelado/
+│       ├── capa.jpg
+│       └── console.jpg
+│
+├── reviews/                       ← Imagens de reviews
+│   └── elden-ring-dlc/
+│       ├── capa.jpg
+│       └── boss-final.jpg
+│
+├── lancamentos/                   ← Imagens de lançamentos
+├── esports/                       ← Imagens de esports
+└── dicas/                         ← Imagens de dicas/guias
+
+══════════════════════════════════════════════════════════════════
+REGRAS PARA IMAGENS:
+══════════════════════════════════════════════════════════════════
+
+1. TAMANHOS:
+   - Capa do artigo: 1200x630px (proporção OG / redes sociais)
+   - Imagens no corpo: 800x450px
+   - Thumbnails (cards): 400x225px
+   - Avatar: 100x100px
+
+2. FORMATO:
+   - Use .jpg para fotos e screenshots
+   - Use .png para logos e ícones (fundo transparente)
+   - Use .webp se possível (70% menor que JPG)
+
+3. NOMES:
+   - Sempre em minúsculas
+   - Separar palavras com hífen: gameplay-vice-city.jpg
+   - Nomes descritivos (NÃO: img001.jpg)
+
+4. COMPRIMIR SEMPRE:
+   - https://squoosh.app/ (melhor ferramenta, grátis)
+   - Qualidade 80% já é ótimo para web
+
+5. COMO REFERENCIAR NOS ARTIGOS:
+   De artigos/noticias/meu-artigo.html:
+   ../../images/noticias/meu-artigo/capa.jpg (sobe 2 níveis)
+   
+   De index.html (raiz):
+   images/noticias/meu-artigo/capa.jpg (mesmo nível)
+
+══════════════════════════════════════════════════════════════════
+FERRAMENTAS GRATUITAS:
+══════════════════════════════════════════════════════════════════
+- Comprimir: https://squoosh.app/
+- Favicon: https://favicon.io/
+- Banners: https://canva.com/
+- Screenshots: PrintScreen ou ShareX
+- Remover fundo: https://remove.bg/
+- Redimensionar: https://squoosh.app/ (também faz isso)
