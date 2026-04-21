@@ -1,3 +1,14 @@
+    <url>
+        <loc>https://www.gglevelnews.com.br/artigos/lancamentos/windrose.html</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.gglevelnews.com.br/images/lancamentos/windrose/capa.jpg</image:loc>
+            <image:title>Windrose - Survival de piratas em mundo aberto</image:title>
+            <image:caption>Arte promocional de Windrose, navio pirata em mar aberto</image:caption>
+        </image:image>
+    </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ╔══════════════════════════════════════════════════════════════════╗
@@ -79,15 +90,15 @@
 
     <!-- ARTIGOS - Cada artigo publicado deve ser adicionado aqui -->
     <url>
-        <loc>https://www.gglevelnews.com.br/noticias/gta-6-data-lancamento-trailer-gameplay</loc>
-        <lastmod>2026-04-18</lastmod>
+        <loc>https://www.gglevelnews.com.br/artigos/noticias/pragmata</loc>
+        <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <!-- SITEMAP DE IMAGENS: Ajuda o Google Imagens a indexar -->
-        <image:image>
-            <image:loc>https://www.gglevelnews.com.br/images/gta6-trailer.jpg</image:loc>
-            <image:title>GTA 6 Trailer de Gameplay Oficial</image:title>
-            <image:caption>Screenshot do trailer de gameplay de GTA 6 mostrando Vice City</image:caption>
+        <image:image>>
+            <image:loc>https://www.gglevelnews.com.br/images/noticias/pragmata/capa1.webp</image:loc>
+            <image:title>Capa do jogo pragmata</image:title>
+            <image:caption>Screenshot da capa de pragmata</image:caption>
         </image:image>
     </url>
 
