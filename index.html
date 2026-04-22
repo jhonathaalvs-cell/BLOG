@@ -379,115 +379,10 @@
              → Google dá mais peso ao conteúdo que aparece primeiro
         ═══════════════════════════════════════════════════════ -->
         <section class="hero-section" aria-label="Notícia em destaque">
-            <div class="container">
-                <!-- 
-                  ╔══════════════════════════════════════════════════════════════╗
-                  ║  📝 COMO USAR ESTA SEÇÃO: HERO (DESTAQUE PRINCIPAL)        ║
-                  ║                                                             ║
-                  ║  Esta é a notícia mais importante que aparece no TOPO.      ║
-                  ║  É o primeiro conteúdo que o visitante vê (above the fold). ║
-                  ║                                                             ║
-                  ║  PASSO A PASSO:                                             ║
-                  ║  1. Troque o src da imagem pela sua imagem real             ║
-                  ║  2. Troque o alt pela descrição real da imagem              ║
-                  ║  3. Troque o href do link pelo caminho do artigo            ║
-                  ║     Ex: artigos/noticias/meu-artigo.html                    ║
-                  ║  4. Troque o título no <h1>                                 ║
-                  ║  5. Troque a data no <time> (formato: YYYY-MM-DD)          ║
-                  ║  6. Troque o resumo no <p class="hero-excerpt">            ║
-                  ║  7. Troque o nome do autor                                 ║
-                  ║                                                             ║
-                  ║  DICA: Atualize esta seção sempre que tiver uma notícia     ║
-                  ║  muito importante ou destaque da semana!                    ║
-                  ╚══════════════════════════════════════════════════════════════╝
-                -->
-                <article class="hero-card">
-                    <!-- 
-                      ✅ AULA: Tag <article>
-                      → Indica conteúdo independente e auto-contido
-                      → Google entende que isso é um artigo/notícia
-                      → Cada notícia deve ser um <article>
-                    -->
-                    <div class="hero-image">
-                        <img src="images/noticias/pragmata/capa1.webp" 
-                             alt="Pragmata - Novo jogo de ficção científica da Capcom com Diana e interface holográfica"
-                             width="1200" height="630" loading="eager">
-                        <!-- 
-                          ✅ AULA: Atributos da imagem
-                          → src: caminho da imagem. Salve em images/site/ ou images/noticias/
-                          → alt: OBRIGATÓRIO! Descreva a imagem com palavras-chave
-                            O Google não "vê" imagens, ele lê o alt text
-                            Pessoas cegas usam leitores de tela que leem o alt
-                            EXEMPLO BOM: "GTA 6 trailer mostrando cidade de Vice City"
-                            EXEMPLO RUIM: "imagem" ou "foto"
-                          → width/height: Evita layout shift (CLS - Core Web Vital)
-                            O navegador reserva o espaço antes de carregar
-                            DICA: use 1200x630 para imagens hero (proporção ideal para redes sociais)
-                          → loading="eager": Carrega imediatamente (acima do fold)
-                            Use loading="lazy" para imagens abaixo do fold
-                        -->
-                        <span class="badge badge-destaque">🔥 Destaque</span>
-                        <!-- 
-                          ✅ AULA: Badge/Etiqueta
-                          → Esse <span> mostra uma etiqueta sobre a imagem
-                          → Você pode trocar o texto: "🔥 Destaque", "⭐ Review", "🚀 Novo", etc.
-                          → A classe badge-destaque define a cor (veja no CSS)
-                        -->
-                    </div>
-                    <div class="hero-content">
-                        <div class="article-meta">
-                            <span class="category-tag category-noticias">Notícias</span>
-                            <!-- 
-                              ✅ AULA: Categoria
-                              → Troque pelo nome da categoria: Notícias, Reviews, Lançamentos, etc.
-                              → Se quiser cor diferente por categoria, use classes:
-                                category-noticias, category-reviews, category-lancamentos, etc.
-                            -->
-                            <time datetime="2026-04-20">20 de Abril, 2026</time>
-                            <!-- 
-                              ✅ AULA: Tag <time> com datetime
-                              → datetime DEVE estar em formato ISO: AAAA-MM-DD
-                                Exemplo: 2025-06-15 = 15 de Junho de 2025
-                              → O texto visível pode ser em qualquer formato bonito
-                                Exemplo: "15 de Junho, 2025"
-                              → Google usa o datetime para mostrar a data nos resultados
-                              → Mostra que o conteúdo é recente/atualizado
-                            -->
-                        </div>
-                        <h1 class="hero-title">
-                            <a href="artigos/noticias/pragmata.html">PRAGMATA é GOTY? Veja o novo jogo da Capcom</a>
-                        </h1>
-                        <!-- 
-                          ✅ AULA: Tag <h1>
-                          → APENAS UM <h1> por página (regra de ouro do SEO)
-                          → Deve conter a palavra-chave principal da página
-                          → É o título mais importante para o Google
-                          → Na home, o h1 é a notícia destaque
-                          → Em artigos, o h1 é o título do artigo
-                          → O href deve apontar para a página do artigo completo
-                            Exemplo: artigos/noticias/gta-6-data-lancamento.html
-                        -->
-                        <p class="hero-excerpt">PRAGMATA chegou! O novo jogo da Capcom mistura ficção científica, ação e mecânicas de hacking em uma aventura na Lua. Confira nossa análise sobre gameplay, história e o que a comunidade está achando do lançamento.</p>
-                        <!-- 
-                          ✅ AULA: Resumo/Excerpt
-                          → 2-3 frases que resumem o artigo
-                          → Deve ser atraente para o leitor clicar
-                          → Inclua palavras-chave de forma natural
-                          → NÃO copie o início do artigo - escreva um resumo único
-                        -->
-                        <div class="hero-footer">
-                            <span class="author">Por <strong>Redação GG Level</strong></span>
-                            <span class="read-time">6 min de leitura</span>
-                            <!-- 
-                              ✅ AULA: Tempo de leitura
-                              → Calcule: número de palavras ÷ 200 = minutos
-                              → Artigo com 1000 palavras = ~5 min de leitura
-                              → Isso ajuda o leitor a decidir se vai ler agora
-                            -->
-                        </div>
-                    </div>
-                </article>
-            </div>
+          <div class="container">
+            <!-- Bloco de destaque removido para uso do sistema automatizado via JS -->
+            <div id="destaque-semana"></div>
+          </div>
         </section>
 
         <!-- ═══════════════════════════════════════════════════════
@@ -721,49 +616,7 @@
                           ║  Recomendado: 5 itens                                      ║
                           ╚══════════════════════════════════════════════════════════════╝
                         -->
-                        <div class="trending-list">
-
-                            <!-- ══════ TRENDING ITEM 1 (COPIE PARA CRIAR MAIS) ══════ -->
-                            <article class="trending-item">
-                                <span class="trending-number">1</span>
-                                <div class="trending-content">
-                                    <h3><a href="artigos/noticias/pragmata.html">PRAGMATA é GOTY? Veja o novo jogo da Capcom</a></h3>
-                                    <div class="article-meta">
-                                        <time datetime="2026-04-20">20 Abr</time>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <!--item 2-->
-                              <article class="trending-item">
-                                <span class="trending-number">1</span>
-                                <div class="trending-content">
-                                    <h3><a href="artigos/noticias/pragmata.html">Windrose chega em acesso atecipado e chama atenção em 2026</a></h3>
-                                    <div class="article-meta">
-                                        <time datetime="2026-04-20">20 Abr</time>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- ══════ FIM DO TRENDING ITEM 1 ══════ -->
-                             <article class="trending-item">
-                                <span class="trending-number">1</span>
-                                <div class="trending-content">
-                                    <h3><a href="artigos/esports/esports-nations-cup-2026.html">Esports Nations Cup 2026: a “Copa do Mundo” dos games</a></h3>
-                                    <div class="article-meta">
-                                        <time datetime="2026-04-20">21 Abr</time>
-                                    </div>
-                                </div>
-                            </article>
-                            <!-- 
-                              📋 PARA ADICIONAR MAIS ITENS:
-                              → Copie entre "TRENDING ITEM 1" e "FIM DO TRENDING ITEM 1"
-                              → Cole aqui embaixo
-                              → Troque o número (2, 3, 4, 5)
-                              → Troque o título e link
-                              → Repita até ter 5 itens
-                            -->
-
-                        </div>
+                        <div class="trending-list" id="mais-lidas"></div>
                     </div>
 
                     <!-- SIDEBAR -->
@@ -1001,5 +854,9 @@
       → Alternativa: usar "defer" no script do <head>
       → PERFORMANCE = melhor Core Web Vitals = melhor SEO
     -->
+  </body>
+  <!-- Script para destaque da semana automatizado -->
+  <script src="js/destaque-semana.js"></script>
+  </html>
 </body>
 </html>

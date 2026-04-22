@@ -1,12 +1,35 @@
+    <!-- ARTIGOS REAIS DO BLOG GG LEVEL NEWS -->
+    <url>
+        <loc>https://www.gglevelnews.com.br/artigos/noticias/pragmata.html</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.gglevelnews.com.br/images/noticias/pragmata/capa1.webp</image:loc>
+            <image:title>Pragmata - Novo jogo da Capcom</image:title>
+            <image:caption>Capa do jogo Pragmata</image:caption>
+        </image:image>
+    </url>
     <url>
         <loc>https://www.gglevelnews.com.br/artigos/lancamentos/windrose.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://www.gglevelnews.com.br/images/lancamentos/windrose/capa.jpg</image:loc>
+            <image:loc>https://www.gglevelnews.com.br/images/lancamentos/Windrose%20img/Art_02_name.jpg</image:loc>
             <image:title>Windrose - Survival de piratas em mundo aberto</image:title>
-            <image:caption>Arte promocional de Windrose, navio pirata em mar aberto</image:caption>
+            <image:caption>Arte promocional de Windrose</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://www.gglevelnews.com.br/artigos/esports/esports-nations-cup-2026.html</loc>
+        <lastmod>2026-04-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.gglevelnews.com.br/images/esports/sports%20nations%20cup%20img/cup.webp</image:loc>
+            <image:title>Esports Nations Cup 2026</image:title>
+            <image:caption>Logo da Nations Cup</image:caption>
         </image:image>
     </url>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -89,46 +112,6 @@
     </url>
 
     <!-- ARTIGOS - Cada artigo publicado deve ser adicionado aqui -->
-    <url>
-        <loc>https://www.gglevelnews.com.br/artigos/noticias/pragmata</loc>
-        <lastmod>2026-04-20</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <!-- SITEMAP DE IMAGENS: Ajuda o Google Imagens a indexar -->
-        <image:image>>
-            <image:loc>https://www.gglevelnews.com.br/images/noticias/pragmata/capa1.webp</image:loc>
-            <image:title>Capa do jogo pragmata</image:title>
-            <image:caption>Screenshot da capa de pragmata</image:caption>
-        </image:image>
-    </url>
-
-    <url>
-        <loc>https://www.gglevelnews.com.br/noticias/playstation-6-especificacoes-retrocompatibilidade</loc>
-        <lastmod>2026-04-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://www.gglevelnews.com.br/noticias/nintendo-switch-2-jogos-lancamento</loc>
-        <lastmod>2026-04-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.gglevelnews.com.br/noticias/xbox-game-pass-abril-2026</loc>
-        <lastmod>2026-04-15</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://www.gglevelnews.com.br/noticias/elden-ring-2-anuncio-fromSoftware</loc>
-        <lastmod>2026-04-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
 
     <!-- PÁGINAS INSTITUCIONAIS -->
     <url>
