@@ -1,5 +1,5 @@
 # ══════════════════════════════════════════════════════════════════
-#  🎮 GG Level News - Robots.txt
+#  GG Level News - Robots.txt
 #  📚 MODO AULA: Controla o acesso dos robôs de busca ao seu site
 #
 #  O QUE É O ROBOTS.TXT:

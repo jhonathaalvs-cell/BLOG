@@ -1,4 +1,4 @@
-# 🎮 GUIA COMPLETO DE SEO - GameVerse News
+# GUIA COMPLETO DE SEO - GameVerse News
 ## 📚 Modo Aula: Tudo que Você Precisa Saber para Ranquear no Google
 
 ---

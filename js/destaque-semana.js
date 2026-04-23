@@ -16,14 +16,14 @@ Como usar:
 // GG Level News - Automação dos Destaques e Mais Lidas
 (function() {
   // 1. Defina aqui o link do artigo de destaque da semana
-  var destaqueDaSemana = "artigos/esports/aspas-projeta-futuro.html";
+  var destaqueDaSemana = "artigos/lancamentos/windrose.html";
 
   // 2. Defina aqui a lista dos artigos mais lidos da semana (ordem do mais lido para o menos lido)
   // Basta colocar os hrefs dos artigos reais
   var maisLidosSemana = [
     "artigos/lancamentos/windrose.html",
-    "artigos/esports/esports-nations-cup-2026.html",
-    "artigos/esports/aspas-projeta-futuro.html"
+    "artigos/noticias/pragmata.html",
+    "artigos/esports/esports-nations-cup-2026.html"
   ];
 
   // 2. Função para buscar o card do artigo de destaque

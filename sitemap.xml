@@ -32,6 +32,17 @@
             <image:caption>Logo da Nations Cup</image:caption>
         </image:image>
     </url>
+    <url>
+        <loc>https://www.gglevelnews.com.br/artigos/esports/aspas-projeta-futuro.html</loc>
+        <lastmod>2026-04-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://www.gglevelnews.com.br/images/esports/valorant-aspas/aspas-capa.jpg</image:loc>
+            <image:title>aspas mira voos maiores com o Brasil no VALORANT</image:title>
+            <image:caption>aspas fala sobre MIBR, LOUD, 3 mil kills e o sonho de jogar pela Seleção Brasileira na Esports Nations Cup 2026.</image:caption>
+        </image:image>
+    </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ╔══════════════════════════════════════════════════════════════════╗
