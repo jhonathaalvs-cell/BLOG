@@ -148,14 +148,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const cookieAccept = document.getElementById('cookieAccept');
     const cookieReject = document.getElementById('cookieReject');
 
+
+    // Função para carregar o Google Analytics só após consentimento
+    function loadGoogleAnalytics() {
+        if (window.gtagLoaded) return;
+        window.gtagLoaded = true;
+        var script1 = document.createElement('script');
+        script1.async = true;
+        script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-HZH9YTXBV2';
+        document.head.appendChild(script1);
+        var script2 = document.createElement('script');
+        script2.innerHTML = "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-HZH9YTXBV2');";
+        document.head.appendChild(script2);
+    }
+
     function initCookieConsent() {
         const consent = localStorage.getItem('cookieConsent');
-
         if (!consent && cookieBanner) {
-            // Mostra o banner após 1 segundo (não bloqueia o conteúdo)
             setTimeout(function () {
                 cookieBanner.classList.add('active');
             }, 1000);
+        } else if (consent === 'accepted') {
+            loadGoogleAnalytics();
         }
     }
 
@@ -165,17 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cookieAccept.addEventListener('click', function () {
             localStorage.setItem('cookieConsent', 'accepted');
             cookieBanner.classList.remove('active');
-
-            /*
-              ✅ AULA: Quando o usuário ACEITA cookies
-              → Aqui você ativa Google Analytics, AdSense, etc.
-              → Só carregue scripts de rastreamento APÓS o consentimento
-              → Isso é obrigatório pela LGPD
-              
-              Exemplo:
-              loadGoogleAnalytics();
-              loadFacebookPixel();
-            */
+            loadGoogleAnalytics();
         });
     }
 
