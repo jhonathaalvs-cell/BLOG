@@ -16,14 +16,55 @@ Como usar:
 // GG Level News - Automação dos Destaques e Mais Lidas
 (function() {
   // 1. Defina aqui o link do artigo de destaque da semana
-  var destaqueDaSemana = "artigos/lancamentos/windrose.html";
+  var destaqueDaSemana = "artigos/noticias/onimusha.html";
 
   // 2. Defina aqui a lista dos artigos mais lidos da semana (ordem do mais lido para o menos lido)
   // Basta colocar os hrefs dos artigos reais
   var maisLidosSemana = [
-    "artigos/lancamentos/windrose.html",
-    "artigos/noticias/pragmata.html",
-    "artigos/esports/esports-nations-cup-2026.html"
+    {
+      href: "artigos/noticias/onimusha.html",
+      titulo: "Capcom ainda tem surpresas em 2026 e novo Onimusha vem aí",
+      img: "images/noticias/onimusha/capa1.png",
+      alt: "Onimusha Way of the Sword - Capcom 2026",
+      data: "2026-04-24",
+      categoria: "Notícias",
+      resumo: "A Capcom surpreende em 2026 com o retorno da franquia Onimusha. Veja tudo sobre a trama, combate e novidades do novo jogo.",
+      autor: "GG Level News",
+      tempo: "4 min"
+    },
+    {
+      href: "artigos/noticias/pragmata.html",
+      titulo: "PRAGMATA é GOTY? Veja o novo jogo da Capcom",
+      img: "images/noticias/pragmata/capa1.webp",
+      alt: "Pragmata - Gameplay e análise do novo jogo da Capcom",
+      data: "2026-04-20",
+      categoria: "Notícias",
+      resumo: "O novo título da Capcom mistura ação, hacking e ficção científica em uma aventura na Lua. Confira o que achamos.",
+      autor: "GG Level News",
+      tempo: "4 min"
+    },
+    {
+      href: "artigos/lancamentos/windrose.html",
+      titulo: "Windrose chega em acesso antecipado e chama atenção em 2026",
+      img: "images/lancamentos/Windrose img/Art_02_name.jpg",
+      alt: "Windrose - Survival de piratas em mundo aberto, lançamento 2026",
+      data: "2026-04-14",
+      categoria: "Lançamentos",
+      resumo: "Novo survival de piratas mistura exploração, crafting e batalhas navais. Veja detalhes do lançamento e gameplay.",
+      autor: "GG Level News",
+      tempo: "4 min"
+    },
+    {
+      href: "artigos/esports/esports-nations-cup-2026.html",
+      titulo: "Esports Nations Cup 2026: Brasil na disputa",
+      img: "images/esports/sports nations cup img/cup.webp",
+      alt: "esports nations cup",
+      data: "2026-04-21",
+      categoria: "Esports",
+      resumo: "É a nova Copa do Mundo dos esports, reunindo seleções nacionais em Riade. Entenda como funciona e o papel do Brasil!",
+      autor: "GG Level News",
+      tempo: "4 min"
+    }
   ];
 
   // 2. Função para buscar o card do artigo de destaque
@@ -97,31 +138,25 @@ Como usar:
     var destino = document.getElementById('mais-lidas');
     if (!destino) return;
     destino.innerHTML = '';
-    maisLidosSemana.forEach(function(href, idx) {
-      var card = getCardByHref(href);
-      if (card) {
-        // Extrai dados principais
-        var titulo = card.querySelector('.card-title')?.textContent || 'Artigo';
-        var data = card.querySelector('time')?.textContent || '';
-        var link = card.querySelector('a.card-link')?.getAttribute('href') || '#';
-        // Monta o HTML do item de ranking
-        destino.innerHTML += `
-          <article class="trending-item">
-            <span class="trending-number">${idx + 1}</span>
-            <div class="trending-content">
-              <h3><a href="${link}">${titulo}</a></h3>
-              <div class="article-meta">
-                <time>${data}</time>
-              </div>
+    maisLidosSemana.forEach(function(artigo, idx) {
+      destino.innerHTML += `
+        <article class="trending-item">
+          <span class="trending-number">${idx + 1}</span>
+          <div class="trending-content">
+            <a href="${artigo.href}">
+              <img src="${artigo.img}" alt="${artigo.alt}" width="60" height="34" loading="lazy" style="vertical-align:middle;margin-right:8px;border-radius:4px;">
+              <strong>${artigo.titulo}</strong>
+            </a>
+            <div class="article-meta">
+              <time>${artigo.data}</time>
+              <span class="category-tag">${artigo.categoria}</span>
             </div>
-          </article>
-        `;
-      }
+          </div>
+        </article>
+      `;
     });
     /*
-      ✅ EDUCATIVO: Esta lista é gerada automaticamente pelo JS
-      → Basta atualizar a lista maisLidosSemana para mudar o ranking
-      → O visual segue o padrão do site (trending-item)
+      ✅ EDUCATIVO: Agora a lista é gerada a partir do array de objetos, não depende mais dos cards do HTML
     */
   }
 

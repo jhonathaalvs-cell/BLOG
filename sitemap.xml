@@ -1,5 +1,16 @@
     <!-- ARTIGOS REAIS DO BLOG GG LEVEL NEWS (GitHub Pages) -->
     <url>
+        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/noticias/onimusha.html</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/noticias/onimusha/capa1.png</image:loc>
+            <image:title>Capcom ainda tem surpresas em 2026 e novo Onimusha vem aí</image:title>
+            <image:caption>Arte promocional de Onimusha: Way of the Sword</image:caption>
+        </image:image>
+    </url>
+    <url>
         <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/noticias/pragmata.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
