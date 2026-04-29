@@ -7,7 +7,7 @@
 let artigos = [];
 
 // Função para gerar os cards
-function gerarCardsArtigos(destinoSelector, categoria, maxExibir, verTodosUrl) {
+function gerarCardsArtigos(destinoSelector, categoria, maxExibir, verTodosUrl, destaqueUrl) {
   const destino = document.querySelector(destinoSelector);
   if (!destino) return;
   destino.innerHTML = '';
@@ -15,13 +15,24 @@ function gerarCardsArtigos(destinoSelector, categoria, maxExibir, verTodosUrl) {
   let filtrados = categoria ? artigos.filter(a => a.categoria === categoria) : artigos;
   // Ordena por data (mais recente primeiro)
   filtrados = filtrados.sort((a, b) => new Date(b.data) - new Date(a.data));
+
+  // Garante que o artigo do destaque sempre apareça
+  if (destaqueUrl) {
+    const idx = filtrados.findIndex(a => a.url === destaqueUrl);
+    if (idx > -1) {
+      // Remove do array para evitar duplicidade
+      const [destaqueArtigo] = filtrados.splice(idx, 1);
+      filtrados.unshift(destaqueArtigo);
+    }
+  }
+
   // Mostra só os primeiros maxExibir
   filtrados.slice(0, maxExibir).forEach(artigo => {
     destino.innerHTML += `
       <article class="news-card">
         <a href="${artigo.url}" class="card-link">
           <div class="card-image">
-            <img src="${artigo.imagem}" alt="${artigo.alt}" width="400" height="225" loading="lazy">
+            <img src="${artigo.imagem}" alt="${artigo.alt || ''}" width="400" height="225" loading="lazy">
           </div>
           <div class="card-content">
             <div class="article-meta">
@@ -53,7 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       artigos = data;
-      gerarCardsArtigos('#ultimas-noticias', 'noticias', 6, 'categoria.html?cat=noticias');
+      // Defina aqui o artigo de destaque da semana (igual ao destaque-semana.js)
+      var destaqueDaSemana = "artigos/noticias/wolverine.html";
+      gerarCardsArtigos('#ultimas-noticias', 'noticias', 6, 'categoria.html?cat=noticias', destaqueDaSemana);
       gerarCardsArtigos('#ultimos-reviews', 'reviews', 6, 'categoria.html?cat=reviews');
     })
     .catch(err => {
