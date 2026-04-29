@@ -67,9 +67,26 @@ Como usar:
     }
   ];
 
+
   // 2. Função para buscar o card do artigo de destaque
   function getCardByHref(href) {
     return document.querySelector('.news-card a.card-link[href="' + href + '"]')?.closest('.news-card');
+  }
+
+  // Função com retry para garantir que o card do destaque já está no DOM
+  function atualizarDestaquePrincipalComRetry(tentativas = 10, intervalo = 120) {
+    var card = getCardByHref(destaqueDaSemana);
+    var destino = document.getElementById('destaque-semana');
+    if (card && destino) {
+      atualizarDestaquePrincipal();
+    } else if (tentativas > 0) {
+      setTimeout(function() {
+        atualizarDestaquePrincipalComRetry(tentativas - 1, intervalo);
+      }, intervalo);
+    } else if (destino) {
+      // Se não achou, mostra mensagem de erro para debug
+      destino.innerHTML = '<div style="color:red;font-size:1.1em">Erro: destaque não encontrado.</div>';
+    }
   }
 
   // 3. Atualiza o destaque principal usando o layout hero-card
@@ -172,8 +189,8 @@ Como usar:
 
   // 6. Executa ao carregar a página
   document.addEventListener('DOMContentLoaded', function() {
-    atualizarDestaquePrincipal();
     atualizarMaisLidas();
     atualizarUltimasNoticias();
+    atualizarDestaquePrincipalComRetry();
   });
 })();

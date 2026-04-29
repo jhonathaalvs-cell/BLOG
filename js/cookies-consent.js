@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Substitua pelo seu código do Google Analytics 4 se necessário
     if (!window.gtag) {
       var script = document.createElement('script');
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX'; // Troque pelo seu ID
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ABCD123456'; // Troque pelo seu ID
       script.async = true;
       document.head.appendChild(script);
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       window.gtag = gtag;
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); // Troque pelo seu ID
+      gtag('config', 'G-ABCD123456'); // Troque pelo seu ID
     }
   }
 });
