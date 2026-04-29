@@ -12,6 +12,22 @@
     "autor": "Redação GG Level",
     "tempo": "6 min"
   },
+
+{
+"titulo": "Capcom ainda tem supresas em 2026 e o novo Onimusha vem aí",
+"url": "artigos/noticias/onimusha.html",
+"imagem": "images/noticias/onimusha/capa1.png",
+"categoria": "noticias",
+    "categoriaLabel": "Notícias",
+    "data": "2026-04-20",
+    "dataFormatada": "20 Abr 2026",
+    "resumo": "PRAGMATA já foi lançado! Veja gameplay, análise e o que a comunidade está achando do novo jogo da Capcom.",
+    "autor": "Redação GG Level",
+    "tempo": "6 min"
+},
+
+
+
   {
     "titulo": "Windrose chega em acesso antecipado e chama atenção em 2026",
     "url": "artigos/lancamentos/windrose.html",
@@ -30,8 +46,8 @@
     "url": "artigos/esports/esports-nations-cup-2026.html",
     "imagem": "images/esports/sports nations cup img/cup.webp",
     "alt": "Esports Nations Cup 2026",
-    "categoria": "noticias",
-    "categoriaLabel": "Notícias",
+    "categoria": "esports",
+    "categoriaLabel": "esports",
     "data": "2026-04-21",
     "dataFormatada": "21 Abr 2026",
     "resumo": "Saiba tudo sobre a Esports Nations Cup 2026, a Copa do Mundo dos esports, com seleções nacionais, jogos confirmados e a força do Brasil.",
@@ -41,10 +57,10 @@
   {
     "titulo": "Aspas bate 3 mil kills e mira voos maiores com o Brasil",
     "url": "artigos/esports/aspas-projeta-futuro.html",
-    "imagem": "images/esports/valorant aspas/aspas-valorant-champions-2025.jpg.jpg",
+    "imagem": "images/esports/valorant/aspas-valorant-champions-2025.jpg",
     "alt": "aspas bate 3 mil kills e mira voos maiores com o Brasil no VALORANT",
-    "categoria": "noticias",
-    "categoriaLabel": "Notícias",
+    "categoria": "esports",
+    "categoriaLabel": "esports",
     "data": "2026-04-23",
     "dataFormatada": "23 Abr 2026",
     "resumo": "aspas atinge 3 mil kills no VALORANT, fala sobre MIBR, LOUD e o sonho de representar o Brasil na Esports Nations Cup 2026. Veja a entrevista e os destaques do jogador.",
