@@ -11,8 +11,15 @@ function gerarCardsArtigos(destinoSelector, categoria, maxExibir, verTodosUrl, d
   const destino = document.querySelector(destinoSelector);
   if (!destino) return;
   destino.innerHTML = '';
+
   // Filtra por categoria se necessário
   let filtrados = categoria ? artigos.filter(a => a.categoria === categoria) : artigos;
+
+  // Filtro extra: só mostrar em Últimas Notícias se mostrarUltimas !== false
+  if (destinoSelector === '#ultimas-noticias') {
+    filtrados = filtrados.filter(a => a.mostrarUltimas !== false);
+  }
+
   // Ordena por data (mais recente primeiro)
   filtrados = filtrados.sort((a, b) => new Date(b.data) - new Date(a.data));
 

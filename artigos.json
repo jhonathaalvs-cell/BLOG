@@ -1,18 +1,16 @@
 [
-
-{
-"titulo": "Marvel’s Wolverine chega em 2026!",
-"url": "artigos/noticias/wolverine.html",
-"imagem": "images/noticias/wolverine/capa1.webp",
-"categoria": "noticias",
+  {
+    "titulo": "Marvel’s Wolverine chega em 2026!",
+    "url": "artigos/noticias/wolverine.html",
+    "imagem": "images/noticias/wolverine/capa1.webp",
+    "categoria": "noticias",
     "categoriaLabel": "Notícias",
     "data": "2026-04-29",
     "dataFormatada": "29 Abr 2026",
-    "resumo":"Marvel's Wolverine é um jogo de ação-aventura desenvolvido pela Insomniac Games e publicado pela Sony Interactive Entertainment. O jogo é baseado no personagem icônico da Marvel e promete uma narrativa original, explorando os mistérios do passado de Wolverine. O jogo está programado para ser lançado para PlayStation 5 em setembro de 2026.",
+    "resumo": "Marvel's Wolverine é um jogo de ação-aventura desenvolvido pela Insomniac Games e publicado pela Sony Interactive Entertainment. O jogo é baseado no personagem icônico da Marvel e promete uma narrativa original, explorando os mistérios do passado de Wolverine. O jogo está programado para ser lançado para PlayStation 5 em setembro de 2026.",
     "autor": "Redação GG Level",
     "tempo": "4 min"
-},
-
+  },
   {
     "titulo": "Pragmata: Análise Completa do Novo Jogo de Ficção Científica da Capcom",
     "url": "artigos/noticias/pragmata.html",
@@ -26,22 +24,19 @@
     "autor": "Redação GG Level",
     "tempo": "4 min"
   },
-
-{
-"titulo": "Capcom ainda tem supresas em 2026 e o novo Onimusha vem aí",
-"url": "artigos/noticias/onimusha.html",
-"imagem": "images/noticias/onimusha/capa1.png",
-"categoria": "noticias",
+  {
+    "titulo": "Capcom ainda tem supresas em 2026 e o novo Onimusha vem aí",
+    "url": "artigos/noticias/onimusha.html",
+    "imagem": "images/noticias/onimusha/capa1.png",
+    "categoria": "noticias",
     "categoriaLabel": "Notícias",
     "data": "2026-04-20",
     "dataFormatada": "20 Abr 2026",
     "resumo": "PRAGMATA já foi lançado! Veja gameplay, análise e o que a comunidade está achando do novo jogo da Capcom.",
     "autor": "Redação GG Level",
-    "tempo": "4 min"
-},
-
-
-
+    "tempo": "4 min",
+    "mostrarUltimas": false
+  },
   {
     "titulo": "Windrose chega em acesso antecipado e chama atenção em 2026",
     "url": "artigos/lancamentos/windrose.html",
@@ -53,7 +48,8 @@
     "dataFormatada": "14 Abr 2026",
     "resumo": "Novo survival de piratas em mundo aberto, Windrose mistura exploração, crafting e batalhas navais. Veja detalhes do lançamento e gameplay.",
     "autor": "Redação GG Level News",
-    "tempo": "4 min"
+    "tempo": "4 min",
+    "mostrarUltimas": false
   },
   {
     "titulo": "Esports Nations Cup 2026: a Copa do Mundo dos Esports",
@@ -66,7 +62,8 @@
     "dataFormatada": "21 Abr 2026",
     "resumo": "Saiba tudo sobre a Esports Nations Cup 2026, a Copa do Mundo dos esports, com seleções nacionais, jogos confirmados e a força do Brasil.",
     "autor": "GG Level News",
-    "tempo": "4 min"
+    "tempo": "4 min",
+    "mostrarUltimas": false
   },
   {
     "titulo": "Aspas bate 3 mil kills e mira voos maiores com o Brasil",
@@ -79,6 +76,7 @@
     "dataFormatada": "23 Abr 2026",
     "resumo": "aspas atinge 3 mil kills no VALORANT, fala sobre MIBR, LOUD e o sonho de representar o Brasil na Esports Nations Cup 2026. Veja a entrevista e os destaques do jogador.",
     "autor": "GG Level News",
-    "tempo": "4 min"
+    "tempo": "4 min",
+    "mostrarUltimas": false
   }
 ]
