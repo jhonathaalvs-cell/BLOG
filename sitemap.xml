@@ -59,7 +59,11 @@
         <lastmod>2026-04-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <!-- (opcional) bloco de imagem -->
+          <image:image>
+            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/noticias/wolverine/capa1.webp</image:loc>
+            <image:title>Marvel’s Wolverine chega em 2026!</image:title>
+            <image:caption>Marvel's Wolverine é um jogo de ação-aventura desenvolvido pela Insomniac Games e publicado pela Sony Interactive Entertainment. O jogo é baseado no personagem icônico da Marvel, e promete uma narrativa original, explorando os mistérios do passado de Wolverine</image:caption>
+        </image:image>
     </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
