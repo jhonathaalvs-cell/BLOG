@@ -1,16 +1,46 @@
-<!-- ARTIGOS REAIS DO BLOG GG LEVEL NEWS (GitHub Pages) -->
-     <url>
-        <loc><loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/wolverine.html</loc>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║  🎮 GG Level News - Sitemap XML                                ║
+║  📚 MODO AULA: Mapa do site para o Google                       ║
+║                                                                  ║
+║  O QUE É UM SITEMAP:                                            ║
+║  → Arquivo XML que lista TODAS as páginas do seu site           ║
+║  → O Google usa para descobrir e indexar suas páginas           ║
+║  → Sem sitemap, o Google pode não encontrar tudo                ║
+║                                                                  ║
+║  COMO ENVIAR AO GOOGLE:                                        ║
+║  1. Acesse: https://search.google.com/search-console            ║
+║  2. Adicione seu site                                           ║
+║  3. Vá em "Sitemaps" no menu lateral                            ║
+║  4. Cole: https://www.gglevelnews.com.br/sitemap.xml          ║
+║  5. Clique em "Enviar"                                          ║
+║                                                                  ║
+║  TAGS DO SITEMAP:                                               ║
+║  <url> = Uma página do site                                     ║
+║  <loc> = URL completa da página                                 ║
+║  <lastmod> = Última modificação (YYYY-MM-DD)                    ║
+║  <changefreq> = Frequência de atualização                       ║
+║    (always, hourly, daily, weekly, monthly, yearly, never)      ║
+║  <priority> = Importância (0.0 a 1.0)                           ║
+║    1.0 = mais importante, 0.1 = menos importante                ║
+║                                                                  ║
+║  LIMITE: Máximo 50.000 URLs por sitemap                         ║
+║  Se tiver mais, use sitemap index (sitemapindex)                ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/wolverine.html</loc>
         <lastmod>2026-04-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-          <image:image>
+        <image:image>
             <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/noticias/wolverine/capa1.webp</image:loc>
             <image:title>Marvel’s Wolverine chega em 2026!</image:title>
             <image:caption>Marvel's Wolverine é um jogo de ação-aventura desenvolvido pela Insomniac Games e publicado pela Sony Interactive Entertainment. O jogo é baseado no personagem icônico da Marvel, e promete uma narrativa original, explorando os mistérios do passado de Wolverine</image:caption>
         </image:image>
     </url>
-    
     <url>
         <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/noticias/onimusha.html</loc>
         <lastmod>2026-04-24</lastmod>
@@ -66,38 +96,7 @@
             <image:caption>aspas fala sobre MIBR, LOUD, 3 mil kills e o sonho de jogar pela Seleção Brasileira na Esports Nations Cup 2026.</image:caption>
         </image:image>
     </url>
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-╔══════════════════════════════════════════════════════════════════╗
-║  🎮 GG Level News - Sitemap XML                                ║
-║  📚 MODO AULA: Mapa do site para o Google                       ║
-║                                                                  ║
-║  O QUE É UM SITEMAP:                                            ║
-║  → Arquivo XML que lista TODAS as páginas do seu site           ║
-║  → O Google usa para descobrir e indexar suas páginas           ║
-║  → Sem sitemap, o Google pode não encontrar tudo                ║
-║                                                                  ║
-║  COMO ENVIAR AO GOOGLE:                                        ║
-║  1. Acesse: https://search.google.com/search-console            ║
-║  2. Adicione seu site                                           ║
-║  3. Vá em "Sitemaps" no menu lateral                            ║
-║  4. Cole: https://www.gglevelnews.com.br/sitemap.xml          ║
-║  5. Clique em "Enviar"                                          ║
-║                                                                  ║
-║  TAGS DO SITEMAP:                                               ║
-║  <url> = Uma página do site                                     ║
-║  <loc> = URL completa da página                                 ║
-║  <lastmod> = Última modificação (YYYY-MM-DD)                    ║
-║  <changefreq> = Frequência de atualização                       ║
-║    (always, hourly, daily, weekly, monthly, yearly, never)      ║
-║  <priority> = Importância (0.0 a 1.0)                           ║
-║    1.0 = mais importante, 0.1 = menos importante                ║
-║                                                                  ║
-║  LIMITE: Máximo 50.000 URLs por sitemap                         ║
-║  Se tiver mais, use sitemap index (sitemapindex)                ║
-╚══════════════════════════════════════════════════════════════════╝
--->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+</urlset>
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
