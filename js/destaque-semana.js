@@ -16,7 +16,7 @@ Como usar:
 // GG Level News - Automação dos Destaques e Mais Lidas
 (function() {
   // 1. Defina aqui o link do artigo de destaque da semana
-  var destaqueDaSemana = "artigos/noticias/onimusha.html";
+  var destaqueDaSemana = "artigos/noticias/wolverine.html";
 
   // 2. Defina aqui a lista dos artigos mais lidos da semana (ordem do mais lido para o menos lido)
   // Basta colocar os hrefs dos artigos reais

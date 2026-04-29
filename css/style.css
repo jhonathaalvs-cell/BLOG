@@ -471,10 +471,36 @@ button {
     transform: scale(1.03);
 }
 
+
+/* Badge padrão: para destaque único (ex: badge-destaque) */
 .badge {
     position: absolute;
     top: var(--spacing-md);
     left: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(4px);
+}
+
+/* Para múltiplas badges (ex: PlayStation, Xbox, PC), usei um container especial */
+
+/* BADGES MULTIPLAS EM CARDS */
+.badges {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    z-index: 2;
+}
+.badges .badge {
+    position: static;
+    margin: 0;
+    display: inline-block;
     padding: var(--spacing-xs) var(--spacing-md);
     border-radius: var(--radius-full);
     font-size: 0.8rem;

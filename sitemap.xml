@@ -1,4 +1,4 @@
-    <!-- ARTIGOS REAIS DO BLOG GG LEVEL NEWS (GitHub Pages) -->
+<!-- ARTIGOS REAIS DO BLOG GG LEVEL NEWS (GitHub Pages) -->
     <url>
         <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/noticias/onimusha.html</loc>
         <lastmod>2026-04-24</lastmod>
@@ -53,6 +53,13 @@
             <image:title>aspas mira voos maiores com o Brasil no VALORANT</image:title>
             <image:caption>aspas fala sobre MIBR, LOUD, 3 mil kills e o sonho de jogar pela Seleção Brasileira na Esports Nations Cup 2026.</image:caption>
         </image:image>
+    </url>
+    <url>
+        <loc><loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/wolverine.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <!-- (opcional) bloco de imagem -->
     </url>
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
