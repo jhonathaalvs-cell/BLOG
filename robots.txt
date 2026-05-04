@@ -9,7 +9,7 @@
 #  → É uma "sugestão educada" que buscadores respeitam
 #
 #  ONDE DEVE FICAR: Na raiz do domínio
-#  → https://www.gglevelnews.com.br/robots.txt
+#  → https://www.gglevelnews.com/robots.txt
 #
 #  COMO TESTAR:
 #  → Google Search Console > Configurações > robots.txt
@@ -52,7 +52,7 @@ Disallow: /wp-login.php
 # ──────────────────────────────────────────────────────
 # SITEMAP: Indica onde está o mapa do site
 # ──────────────────────────────────────────────────────
-Sitemap: https://www.gglevelnews.com.br/sitemap.xml
+Sitemap: https://www.gglevelnews.com/sitemap.xml
 # ✅ AULA: Sempre inclua o Sitemap aqui!
 # → Ajuda os buscadores a encontrar o sitemap automaticamente
 # → Mesmo que você envie pelo Search Console, coloque aqui também
