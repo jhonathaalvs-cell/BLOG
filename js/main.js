@@ -623,7 +623,7 @@ function addArticleSchema(articleData) {
             "name": "GG Level News",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.gglevelnews.com/images/site/logo.jpg"
+                "url": "/images/site/logo.jpg"
             }
         },
         "mainEntityOfPage": {

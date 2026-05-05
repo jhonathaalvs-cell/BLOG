@@ -52,7 +52,7 @@ Disallow: /wp-login.php
 # ──────────────────────────────────────────────────────
 # SITEMAP: Indica onde está o mapa do site
 # ──────────────────────────────────────────────────────
-Sitemap: https://www.gglevelnews.com/sitemap.xml
+Sitemap: https://gglevelnews.com.br/sitemap.xml
 # ✅ AULA: Sempre inclua o Sitemap aqui!
 # → Ajuda os buscadores a encontrar o sitemap automaticamente
 # → Mesmo que você envie pelo Search Console, coloque aqui também

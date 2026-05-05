@@ -13,7 +13,7 @@
 ║  1. Acesse: https://search.google.com/search-console            ║
 ║  2. Adicione seu site                                           ║
 ║  3. Vá em "Sitemaps" no menu lateral                            ║
-║  4. Cole: https://www.gglevelnews.com/sitemap.xml          ║
+║  4. Cole: https://gglevelnews.com.br/sitemap.xml          ║
 ║  5. Clique em "Enviar"                                          ║
 ║                                                                  ║
 ║  TAGS DO SITEMAP:                                               ║
@@ -29,69 +29,73 @@
 ║  Se tiver mais, use sitemap index (sitemapindex)                ║
 ╚══════════════════════════════════════════════════════════════════╝
 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- HOMEPAGE -->
     <url>
-        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/wolverine.html</loc>
-        <lastmod>2026-04-29</lastmod>
+        <loc>https://gglevelnews.com.br/</loc>
+        <lastmod>2026-05-05</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/noticias/wolverine/capa1.webp</image:loc>
+            <image:loc>https://gglevelnews.com.br/images/noticias/wolverine/capa1.webp</image:loc>
             <image:title>Marvel’s Wolverine chega em 2026!</image:title>
             <image:caption>Marvel's Wolverine é um jogo de ação-aventura desenvolvido pela Insomniac Games e publicado pela Sony Interactive Entertainment. O jogo é baseado no personagem icônico da Marvel, e promete uma narrativa original, explorando os mistérios do passado de Wolverine</image:caption>
         </image:image>
     </url>
     <url>
-        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/noticias/onimusha.html</loc>
+        <loc>https://gglevelnews.com.br/artigos/noticias/onimusha.html</loc>
         <lastmod>2026-04-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/noticias/onimusha/capa1.png</image:loc>
+            <image:loc>https://gglevelnews.com.br/images/noticias/onimusha/capa1.png</image:loc>
             <image:title>Capcom ainda tem surpresas em 2026 e novo Onimusha vem aí</image:title>
             <image:caption>Arte promocional de Onimusha: Way of the Sword</image:caption>
         </image:image>
     </url>
     <url>
-        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/noticias/pragmata.html</loc>
+        <loc>https://gglevelnews.com.br/artigos/noticias/pragmata.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/noticias/pragmata/capa1.webp</image:loc>
+            <image:loc>https://gglevelnews.com.br/images/noticias/pragmata/capa1.webp</image:loc>
             <image:title>Pragmata - Novo jogo da Capcom</image:title>
             <image:caption>Capa do jogo Pragmata</image:caption>
         </image:image>
     </url>
     <url>
-        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/lancamentos/windrose.html</loc>
+        <loc>https://gglevelnews.com.br/artigos/lancamentos/windrose.html</loc>
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/lancamentos/Windrose%20img/Art_02_name.jpg</image:loc>
+            <image:loc>https://gglevelnews.com.br/images/lancamentos/Windrose%20img/Art_02_name.jpg</image:loc>
             <image:title>Windrose - Survival de piratas em mundo aberto</image:title>
             <image:caption>Arte promocional de Windrose</image:caption>
         </image:image>
     </url>
     <url>
-        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/esports/esports-nations-cup-2026.html</loc>
+        <loc>https://gglevelnews.com.br/artigos/esports/esports-nations-cup-2026.html</loc>
         <lastmod>2026-04-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/esports/sports%20nations%20cup%20img/cup.webp</image:loc>
+            <image:loc>https://gglevelnews.com.br/images/esports/sports%20nations%20cup%20img/cup.webp</image:loc>
             <image:title>Esports Nations Cup 2026</image:title>
             <image:caption>Logo da Nations Cup</image:caption>
         </image:image>
     </url>
     <url>
-        <loc>https://jhonathaalvs-cell.github.io/BLOG/artigos/esports/aspas-projeta-futuro.html</loc>
+        <loc>https://gglevelnews.com.br/artigos/esports/aspas-projeta-futuro.html</loc>
         <lastmod>2026-04-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
-            <image:loc>https://jhonathaalvs-cell.github.io/BLOG/images/esports/valorant/aspas-valorant-champions-2025.jpg</image:loc>
+            <image:loc>https://gglevelnews.com.br/images/esports/valorant/aspas-valorant-champions-2025.jpg</image:loc>
             <image:title>aspas mira voos maiores com o Brasil no VALORANT</image:title>
             <image:caption>aspas fala sobre MIBR, LOUD, 3 mil kills e o sonho de jogar pela Seleção Brasileira na Esports Nations Cup 2026.</image:caption>
         </image:image>
@@ -102,7 +106,7 @@
 
     <!-- HOMEPAGE - Prioridade máxima -->
     <url>
-        <loc>https://www.gglevelnews.com/</loc>
+        <loc>https://gglevelnews.com.br/</loc>
         <lastmod>2026-04-18</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
@@ -110,35 +114,35 @@
 
     <!-- PÁGINAS DE CATEGORIA - Prioridade alta -->
     <url>
-        <loc>https://www.gglevelnews.com/categoria/noticias</loc>
+        <loc>https://gglevelnews.com.br/categoria/noticias</loc>
         <lastmod>2026-04-18</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.gglevelnews.com/categoria/reviews</loc>
+        <loc>https://gglevelnews.com.br/categoria/reviews</loc>
         <lastmod>2026-04-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.gglevelnews.com/categoria/lancamentos</loc>
+        <loc>https://gglevelnews.com.br/categoria/lancamentos</loc>
         <lastmod>2026-04-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.gglevelnews.com/categoria/esports</loc>
+        <loc>https://gglevelnews.com.br/categoria/esports</loc>
         <lastmod>2026-04-15</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.gglevelnews.com/categoria/dicas</loc>
+        <loc>https://gglevelnews.com.br/categoria/dicas</loc>
         <lastmod>2026-04-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
@@ -148,28 +152,28 @@
 
     <!-- PÁGINAS INSTITUCIONAIS -->
     <url>
-        <loc>https://www.gglevelnews.com/sobre</loc>
+        <loc>https://gglevelnews.com.br/sobre</loc>
         <lastmod>2026-04-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
-        <loc>https://www.gglevelnews.com/contato</loc>
+        <loc>https://gglevelnews.com.br/contato</loc>
         <lastmod>2026-04-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
-        <loc>https://www.gglevelnews.com/privacidade</loc>
+        <loc>https://gglevelnews.com.br/privacidade</loc>
         <lastmod>2026-01-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
 
     <url>
-        <loc>https://www.gglevelnews.com/termos</loc>
+        <loc>https://gglevelnews.com.br/termos</loc>
         <lastmod>2026-01-01</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
